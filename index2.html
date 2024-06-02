@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Band Template</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #363636;
+        }
+        .hero, .footer {
+            background-color: #ffffff;
+        }
+        .card {
+            background-color: #ffffff;
+            color: #363636;
+            border: 1px solid #ddd;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #6d4e48c5;
+        }
+        .navbar-item {
+            color: #6d4e48be; /* Default text color for navbar items */
+            
+        }
+        .navbar-item:hover {
+            color: #e5a831; /* Text color on hover */
+            background-color: #ffffff; /* Optional: Change background color on hover */
+        }
+        .input, .textarea, .button {
+            background-color: #ffffff;
+            color: #363636;
+            border: 1px solid #ddd;
+        }
+        .hero {
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px; /* Adjust to place it behind the section */
+            left: 0;
+            width: 100%;
+            height: 0px; /* Adjust thickness as needed */
+            background-color: #e5a831;
+            z-index: 1;
+        }
+        .section {
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            color: #6d4e48 !important; /* Default color for the h2 */
+        }
+        .custom-h1 {
+            margin-top: 5px !important; /* Adjust as needed */
+            margin-bottom: 30px !important; /* Adjust as needed */
+        }
+        .custom-p {
+            line-height: 35px;
+            margin-top: 7px !important; /* Adjust as needed */
+            color: #6d4e48; /* Change the color of p elements */
+
+        }
+        .links-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on narrow screens */
+        justify-content: space-evenly;
+        gap: 20px; /* Use a smaller gap for better spacing */
+        margin-top: 33px;
+        }
+        .links-container a {
+            color: #3273dc; /* Bulma default link color */
+            text-decoration: none;
+            flex-grow: 1; /* Allow links to grow to fill space */
+            text-align: center; /* Center text within each link */
+        }
+        .links-container a:hover {
+            text-decoration: underline;
+        }
+        .section .container * {
+            font-size: 1.30em; /* Adjust the size as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index2.html">
+                <img src="../images/fav_icon.png" alt="Αρχική">
+            </a>
+            <a class="navbar-item" href="omada.html">
+                Ομάδα
+            </a>
+            <a class="navbar-item" href="readme.html">
+                READ.me
+            </a>
+            <a class="navbar-item" href="keimena.html">
+                Κείμενα
+            </a>
+            <a class="navbar-item" href="whitepaper.html">
+                White paper
+            </a>
+        </div>
+    </nav>
+    <section class="hero">
+        <figure class="image">
+            <img src="./github_header_w2_clay_brown.png" alt="Header Image">
+        </figure>
+    </section>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title custom-h1"><span class="ellak">ΕΕΛΛΑΚ</span> // <span class="glossapi">glossAPI</span></h1>
+            <br>
+            <p class="custom-p"> To glossAPI απαρτίζεται από κειμενικά δεδομένα, υψηλής ποιότητας (επιστήμη, λογοτεχνία, νομικά κ.α.). Τα κείμενα είναι καθαρισμένα και αποδελτιωμενα με τρόπο που καθιστά εύκολη τη στατιστική ανάλυση αλλά και την εκπαίδευση γλωσσικών μοντέλων. Το αποθετήριο είναι εντελώς ανοιχτό ως προς τα αποτελέσματα και τα εργαλεία που αναπτύξαμε στη πορεία, με έμφαση στην επαναχρησιμοποίηση από την ερευνητική, εκπαιδευτική, και τεχνολογική κοινότητα. Ευελπιστούμε να γίνει μια πρώτη κίνηση για τη συμμετοχή και προσφορά άλλων οργανισμών στα ελληνικά, ανοιχτά, κειμενικά δεδομένα.</p>
+            <div class="links-container">
+                <a href="https://github.com/eellak/glossAPI/tree/master/bibliography">Bibliography</a>
+                <a href="https://github.com/eellak/glossAPI/tree/master/scripts">Scripts</a>
+                <a href="https://github.com/eellak/glossAPI/tree/master/tokenizers">Tokenizers</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

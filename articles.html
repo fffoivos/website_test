@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scientific Articles</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #363636;
+        }
+        .hero, .footer {
+            background-color: #ffffff;
+        }
+        .card {
+            background-color: #ffffff;
+            color: #363636;
+            border: 1px solid #ddd;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #6d4e48c5;
+        }
+        .navbar-item {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            color: #6d4e48be;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .navbar-item:hover {
+            color: #e5a831;
+            background-color: #ffffff !important;
+        }
+        .navbar-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url('./nav_image2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            z-index: -1;
+        }
+        h1 {
+            color: #6d4e48 !important;
+        }
+        .section .container p {
+            font-size: 1.5em;
+        }
+        .section .container .card-content {
+            font-size: 1.1em;
+        }
+        .section .container .title {
+            color: #6d4e48be;
+        }
+        .card {
+            background-color: #ffffff;
+            color: #363636;
+            border: 2px solid #ff5733;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index2.html">
+                <img src="../images/fav_icon.png" alt="Αρχική">
+            </a>
+            <a class="navbar-item" href="omada.html">
+                Ομάδα
+            </a>
+            <a class="navbar-item" href="readme.html">
+                READ.me
+            </a>
+            <a class="navbar-item" href="keimena.html">
+                Κείμενα
+            </a>
+            <a class="navbar-item" href="whitepaper.html">
+                White paper
+            </a>
+        </div>
+        <div class="navbar-background"></div>    
+    </nav>
+    
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Scientific Articles</h1>
+            <div class="columns is-multiline">
+                <div class="column is-one-third" style="padding: 2rem">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="title is-4">Article Title 1</h2>
+                            <p class="subtitle is-6">Author 1, Author 2</p>
+                            <div class="content">
+                                <p>Abstract: This is a brief summary of the article content. It provides an overview of the study, methodology, and key findings.</p>
+                                <a href="article1.pdf" class="button is-link" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third" style="padding: 2rem">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="title is-4">Article Title 2</h2>
+                            <p class="subtitle is-6">Author 3, Author 4</p>
+                            <div class="content">
+                                <p>Abstract: This is a brief summary of the article content. It provides an overview of the study, methodology, and key findings.</p>
+                                <a href="article2.pdf" class="button is-link" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar blocks for more articles -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    <a href="">
+                        <i class="fab fa-facebook-square fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter-square fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-snapchat fa-2x"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/bulma.js"></script>
+</body>
+
+</html>

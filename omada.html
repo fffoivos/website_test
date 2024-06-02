@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Band Template</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #363636;
+        }
+        .hero, .footer {
+            background-color: #ffffff;
+        }
+        .card {
+            background-color: #ffffff;
+            color: #363636;
+            border: 1px solid #ddd;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #6d4e48c5;
+        }
+        .navbar-item {
+            background-color: rgba(255, 255, 255, 0.8) !important; /* Set background to white */
+            color: #6d4e48be; /* Default text color for navbar items */
+            padding: 8px 12px; /* Adjust padding as needed */
+            border-radius: 5px; /* Optional: add some border radius */
+        }
+        .navbar-item:hover {
+            color: #e5a831; /* Text color on hover */
+            background-color: #ffffff !important;
+        }        
+        .navbar-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url('./nav_image2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            z-index: -1; /* Ensure it stays behind the navbar content */
+        }
+        h1 {
+            color: #6d4e48 !important; /* Default color for the h2 */
+        }
+        .section .container p {
+            font-size: 1.5em; /* Adjust the size as needed */
+        }
+        .section .container .card-content {
+            font-size: 1.1em; /* Adjust the size as needed */
+        }
+        .section .container .title {
+            color: #6d4e48be;
+        }
+
+        .card {
+            background-color: #ffffff;
+            color: #363636;
+            border: 2px solid #ff5733; /* Change border width and color as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index2.html">
+                <img src="../images/fav_icon.png" alt="Αρχική">
+            </a>
+            <a class="navbar-item" href="omada.html">
+                Ομάδα
+            </a>
+            <a class="navbar-item" href="readme.html">
+                READ.me
+            </a>
+            <a class="navbar-item" href="keimena.html">
+                Κείμενα
+            </a>
+            <a class="navbar-item" href="whitepaper.html">
+                White paper
+            </a>
+        </div>
+        <div class="navbar-background"></div>    
+    </nav>
+    
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">Η oμάδα του glossAPI</h1>
+            <p>Για τη δημιουργία μιας συλλογής κειμενικών δεδομένων είναι προϋπόθεση: η άρτια γνώση της ελληνικής σε όλες τις ιστορικές της φάσεις όπως και των διαλέκτων της· στατιστική ανάλυση για τη συμφωνία μεταξύ των κριτών, και την εξισορρόπηση του δείγματος. Αλλά και προγραμματιστικές γλώσσες για την απόκτηση και επεξεργασία των δεδομένων, και περαίωση της στατιστικής ανάλυσης.</p>
+
+            <div class="columns is-centered" style="padding: 2rem">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Katerina Zoi</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Katerina Zoi is a PhD candidate in Syntax, Linguistics at National and Kapodistrian University of Athens. She has completed her undergraduate studies in Greek Philology and her postgraduate studies in Theoretical and Applied Linguistics. In addition, she has participated in the 2-year proofreading laboratory at National Bank of Greece Cultural Foundation. Katerina has worked as a proofreader, a handling editor at LingUU Journal of Utrecht University, and an adult instructor on verbal reasoning and introduction to Linguistics. Her main academic interests include: syntax, phonetics, historical linguistics, proofreading and copyediting. Her current role at GFOSS/ΕΕΛΛΑΚ is centered on collecting language resources, annotating data, and machine learning training.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Nina Giallousi</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Nina Giallousi has a degree in Psychology from Panteion University and she is a PhD candidate in Experimental Social Psychology in the same Department. She holds a Master’s in Cognitive Science from the National Kapodistrian University of Athens, and she has been trained in Data Science. She uses Python, R, Git, Bash, SQL and more tools. She is interested in open data and reproducible methods.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Ioanna Moyra</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Ioanna Μoyra is a graduate of Linguistics, department of Greek Philology, National and Kapodistrian University of Athens , Greece and  she studies “ MSc in Language Technology” , as academic fellow of John S. Latsis Public Benefit Foundation. Her master is included in the department of Informatics and Telecommunications in National and Kapodistrian University of Athens. In addition she works as research fellow at National Hellenic Research Foundation in the field of Archival Research. Also she was a researcher in Istorima as an oral history collector. Part of her role in GFOSS/ΕΕΛΛΑΚ is collecting language resources, annotating data and machine learning trainer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Fivos Karounos</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Foivos has studied Computer Science and Psychology and is interested in the intersection of history and technology. He has fulfilled a variety of roles related to start-up business strategy, cryptocurrency forecasting, and research in the theory of knowledge.
+                                Currently he works as software developer in the GlossAPI team. His responsibilities include developing scripts that acquire and extract freely available data useful for the construction of a Greek linguistic corpus.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    <a href="">
+                        <i class="fab fa-facebook-square fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter-square fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-snapchat fa-2x"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/bulma.js"></script>
+</body>
+
+</html>
