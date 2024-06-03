@@ -24,21 +24,51 @@
             border: 1px solid #ddd;
         }
         .navbar {
-            background-color: #ffffff;
-            border-bottom: 1px solid #6d4e48c5;
+        background-color: #ffffff;
+        border-bottom: 1px solid #6d4e48c5;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        }
+        .navbar-brand {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         }
         .navbar-item {
-            color: #6d4e48be; /* Default text color for navbar items */
-            
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            color: #6d4e48be;
+            padding: 0.25rem 0.5rem !important;
+            border-radius: 3px;
+            margin: 0.25rem;
+            white-space: nowrap;
+            font-size: 1rem;
         }
         .navbar-item:hover {
             color: #e5a831; /* Text color on hover */
             background-color: #ffffff; /* Optional: Change background color on hover */
         }
-        .input, .textarea, .button {
-            background-color: #ffffff;
-            color: #363636;
-            border: 1px solid #ddd;
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-brand {
+                width: 100%;
+            }
+
+            .navbar-item {
+                flex-basis: auto;
+                text-align: center;
+            }
+
+            .navbar-image img {
+                max-height: none;
+                width: 100%; /* Ensure the image fills the width on small screens */
+                height: auto; /* Maintain aspect ratio */
+            }
         }
         .hero {
             justify-content:center;
@@ -52,11 +82,13 @@
             color: #6d4e48 !important; /* Default color for the h2 */
         }
         .custom-h1 {
-            margin-top: 5px !important; /* Adjust as needed */
-            margin-bottom: 30px !important; /* Adjust as needed */
+            font-size: 3vmin !important;
+            /*margin-top: 5px !important; /* Adjust as needed */
+            /*margin-bottom: 30px !important; /* Adjust as needed */
         }
         .custom-p {
             line-height: 35px;
+            font-size: 1.5vmax !important;
             margin-top: 7px !important; /* Adjust as needed */
             color: #6d4e48; /* Change the color of p elements */
             justify-content:center;

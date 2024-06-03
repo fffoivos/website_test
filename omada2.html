@@ -31,11 +31,13 @@
         align-items: stretch;
         justify-content: space-between;
         }
+
         .navbar-brand {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
         }
+
         .navbar-item {
             background-color: rgba(255, 255, 255, 0.8) !important;
             color: #6d4e48be;
@@ -45,6 +47,7 @@
             white-space: nowrap;
             font-size: 1rem;
         }
+
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -59,23 +62,17 @@
                 flex-basis: auto;
                 text-align: center;
             }
+
+            .navbar-image img {
+                max-height: none;
+                width: 100%; /* Ensure the image fills the width on small screens */
+                height: auto; /* Maintain aspect ratio */
+            }
         }
         .navbar-item:hover {
             color: #e5a831; /* Text color on hover */
             background-color: #ffffff !important;
         }        
-        .navbar-background {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            /*background-image: url('./nav_image2.png');*/
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: right center;
-            z-index: -1; /* Ensure it stays behind the navbar content */
-        }
         h1 {
             color: #6d4e48 !important; /* Default color for the h2 */
         }
@@ -98,26 +95,26 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
-                <img src="../images/fav_icon.png" alt="Αρχική">
-            </a>
-            <a class="navbar-item" href="omada.html">
-                Ομάδα
-            </a>
-            <a class="navbar-item" href="readme.html">
-                READ.me
-            </a>
-            <a class="navbar-item" href="keimena.html">
-                Κείμενα
-            </a>
-            <a class="navbar-item" href="whitepaper.html">
-                White paper
-            </a>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            <img src="../images/fav_icon.png" alt="Αρχική">
+        </a>
+        <a class="navbar-item" href="omada.html">
+            Ομάδα
+        </a>
+        <a class="navbar-item" href="readme.html">
+            READ.me
+        </a>
+        <a class="navbar-item" href="keimena.html">
+            Κείμενα
+        </a>
+        <a class="navbar-item" href="whitepaper.html">
+            White paper
+        </a>
         </div>
-    </nav>
-    
+    <div class="navbar-background"></div>
+</nav>    
     <section class="section">
         <div class="container has-text-centered">
             <h1 class="title">Η oμάδα του glossAPI</h1>
