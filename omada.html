@@ -24,31 +24,46 @@
             border: 1px solid #ddd;
         }
         .navbar {
-            background-color: #ffffff;
-            border-bottom: 1px solid #6d4e48c5;
+        background-color: #ffffff;
+        border-bottom: 1px solid #6d4e48c5;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        }
+        .navbar-brand {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         }
         .navbar-item {
-            background-color: rgba(255, 255, 255, 0.8) !important; /* Set background to white */
-            color: #6d4e48be; /* Default text color for navbar items */
-            padding: 8px 12px; /* Adjust padding as needed */
-            border-radius: 5px; /* Optional: add some border radius */
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            color: #6d4e48be;
+            padding: 0.25rem 0.5rem !important;
+            border-radius: 3px;
+            margin: 0.25rem;
+            white-space: nowrap;
+            font-size: 1rem;
         }
         .navbar-item:hover {
             color: #e5a831; /* Text color on hover */
             background-color: #ffffff !important;
-        }        
-        .navbar-background {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            background-image: url('./nav_image2.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: right center;
-            z-index: -1; /* Ensure it stays behind the navbar content */
         }
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-brand {
+                width: 100%;
+            }
+
+            .navbar-item {
+                flex-basis: auto;
+                text-align: center;
+            }
+        } 
         h1 {
             color: #6d4e48 !important; /* Default color for the h2 */
         }
