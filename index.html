@@ -18,6 +18,22 @@
         .hero, .footer {
             background-color: #ffffff;
         }
+        .hero {
+            background-color: #ffffff;
+            padding: 0;
+        }
+        
+        .hero-body {
+            padding: 0;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 1350px; /* Adjust this to match your SVG's width */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
         .card {
             background-color: #ffffff;
             color: #363636;
@@ -96,7 +112,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
-                <img src="../images/fav_icon.png" alt="Αρχική">
+                Αρχική
             </a>
             <a class="navbar-item" href="omada.html">
                 Ομάδα
@@ -108,9 +124,11 @@
     </nav>
 
     <section class="hero">
-        <figure class="image">
-            <img src="./github_header_w2_clay_brown.png" alt="Header Image">
-        </figure>
+        <div class="hero-body">
+            <div class="container">
+                <img src="./github_hero.svg" alt="GlossAPI Hero" class="hero-image">
+            </div>
+        </div>
     </section>
 
     <section class="section">
