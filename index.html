@@ -42,11 +42,21 @@
         .navbar {
             background-color: #ffffff;
             border-bottom: 1px solid #6d4e48c5;
+            justify-content: center; /* Center the navbar items */
+            margin-bottom: 20px; /* Adjusts spacing below the navbar */
         }
+    
+        .navbar-brand {
+            display: flex;
+            justify-content: space-around; /* Evenly space out the navbar items */
+            width: 30%; /* Adjust width as needed to control the spacing */
+        }
+    
         .navbar-item {
             color: #6d4e48be; /* Default text color for navbar items */
-            
+            text-align: center;
         }
+    
         .navbar-item:hover {
             color: #e5a831; /* Text color on hover */
             background-color: #ffffff; /* Optional: Change background color on hover */
@@ -114,6 +124,9 @@
             <a class="navbar-item" href="index.html">
                 Αρχική
             </a>
+            <a class="navbar-item" href="dic_test.html">
+                Λήμμα
+            </a>
             <a class="navbar-item" href="omada.html">
                 Ομάδα
             </a>
@@ -122,7 +135,7 @@
             </a>
         </div>
     </nav>
-
+    
     <section class="hero">
         <div class="hero-body">
             <div class="container">

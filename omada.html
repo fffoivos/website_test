@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ομάδα glossAPI</title>
+    <title>glossAPI - ΕΕΛΛΑΚ</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <!-- Bulma Version 1-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css" />
@@ -26,29 +26,26 @@
         .navbar {
             background-color: #ffffff;
             border-bottom: 1px solid #6d4e48c5;
+            justify-content: center; /* Center the navbar items */
+            margin-bottom: 20px; /* Adjusts spacing below the navbar */
         }
+    
+        .navbar-brand {
+            display: flex;
+            justify-content: space-around; /* Evenly space out the navbar items */
+            width: 30%; /* Adjust width as needed to control the spacing */
+        }
+    
         .navbar-item {
-            background-color: rgba(255, 255, 255, 0.8) !important; /* Set background to white */
             color: #6d4e48be; /* Default text color for navbar items */
-            padding: 8px 12px; /* Adjust padding as needed */
-            border-radius: 5px; /* Optional: add some border radius */
+            text-align: center;
         }
+    
         .navbar-item:hover {
             color: #e5a831; /* Text color on hover */
-            background-color: #ffffff !important;
-        }        
-        .navbar-background {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            background-image: url('./nav_image2.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: right center;
-            z-index: -1; /* Ensure it stays behind the navbar content */
+            background-color: #ffffff; /* Optional: Change background color on hover */
         }
+
         h1 {
             color: #6d4e48 !important; /* Default color for the h2 */
         }
@@ -78,6 +75,9 @@
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
                     Αρχική
+                </a>
+                <a class="navbar-item" href="dic_test.html">
+                    Λήμμα
                 </a>
                 <a class="navbar-item" href="omada.html">
                     Ομάδα
