@@ -26,14 +26,14 @@
         .navbar {
             background-color: #ffffff;
             border-bottom: 1px solid #6d4e48c5;
-            justify-content: center; /* Center the navbar items */
             margin-bottom: 20px; /* Adjusts spacing below the navbar */
         }
     
         .navbar-brand {
             display: flex;
-            justify-content: space-around; /* Evenly space out the navbar items */
-            width: 30%; /* Adjust width as needed to control the spacing */
+            justify-content: flex-start; /* Evenly space out the navbar items */
+            gap: 38px;
+            padding-left: 15px;
         }
     
         .navbar-item {
@@ -90,9 +90,6 @@
     <main>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="index.html">
-                    Αρχική
-                </a>
                 <a class="navbar-item" href="dic_test.html">
                     Λήμμα
                 </a>
