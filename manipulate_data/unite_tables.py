@@ -1,10 +1,10 @@
 import pandas as pd
 
 # Read the first CSV file
-df1 = pd.read_csv('/home/fivos/Downloads/biblical_kathar_masked.csv', sep=',', engine='python')
+df1 = pd.read_csv('/home/fivos/Downloads/trapeza_8ematon_nea2.csv', sep=',', engine='python')
 
 # Read the second CSV file
-df2 = pd.read_csv('/home/fivos/Downloads/dataset_1_and_archaia(1).csv', sep=',', engine='python')
+df2 = pd.read_csv('/home/fivos/Downloads/dataset_Sep_5.csv', sep=',', engine='python')
 
 # Merge the two dataframes based on the specified columns
 combined_df = pd.merge(df1, df2, on=['text', 'Ποικιλία', 'archaia_or_not'], how='outer')
