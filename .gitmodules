@@ -1,0 +1,3 @@
+[submodule "glossAPI"]
+	path = glossAPI
+	url = git@github.com:eellak/glossAPI.git
