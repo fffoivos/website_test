@@ -1,7 +1,7 @@
 import os
 import re
 import unicodedata
-
+import math
 
 # Define the directory paths
 input_directory = '/home/fivos/Projects/GlossAPI/manual_cleaning_excercises/check_papers/1-50'
@@ -45,7 +45,7 @@ def find_bibliography_line(line):
     # Removes combined characters ie accents from Greek letters
     accentless_line = ''.join(c for c in unicodedata.normalize('NFD', line) if unicodedata.category(c) != 'Mn')
     # Remove any non-printable characters and collapse whitespace
-    concat_line = re.sub(r'[^α-ωΑ-Ω]', '', accentless_line)  # Keeps only printable ASCII and Greek characters
+    concat_line = re.sub(r'[^α-ωΑ-Ω]', '', accentless_line)  # Keeps only Greek characters
     if len(concat_line) < 40:
         match = bibliography_pattern.match( concat_line.lower() )
         return match
@@ -53,6 +53,9 @@ def find_bibliography_line(line):
         return False
 
 def main():
+    # List to store distances from bibliography_line to end of file
+    file_distances = []
+
     # Process each file in the input directory
     for filename in os.listdir(input_directory):
         file_path = os.path.join(input_directory, filename)
@@ -62,8 +65,14 @@ def main():
             continue
         
         # Process the file
-        print(f"processing {filename}")
+        print(f"Processing {filename}")
         last_index_line_number, bibliography_line_number, lines = process_file(file_path)
+        
+        txt_length = len(lines)
+        distance = txt_length - bibliography_line_number  # Distance from bibliography_line to end of file
+        
+        # Store the filename and distance
+        file_distances.append((filename, distance))
         
         # Prepare output lines
         output_lines = []
@@ -90,6 +99,18 @@ def main():
         output_file_path = os.path.join(output_directory, filename)
         with open(output_file_path, 'w', encoding='utf-8') as output_file:
             output_file.writelines(output_lines)
+    
+    # Calculate the top x% files with the longest distances
+    total_files = len(file_distances)
+    top_n = max(1, math.ceil(total_files * 0.2))
+    # Sort the files by distance in descending order
+    sorted_files = sorted(file_distances, key=lambda x: x[1], reverse=True)
+    top_files = sorted_files[:top_n]
+    
+    # Print the names and distances of the top 5% files
+    print("\nTop 5% files with the longest distance from bibliography_line to end of file:")
+    for filename, distance in top_files:
+        print(f"{filename}: {distance} lines after bibliography_line")
 
 if __name__ == '__main__':
     main()
