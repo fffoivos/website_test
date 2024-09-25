@@ -1,10 +1,12 @@
 import os
 import re
+import unicodedata
+
 
 # Define the directory paths
 input_directory = '/home/fivos/Projects/GlossAPI/manual_cleaning_excercises/check_papers/1-50'
 # Outputs here:
-output_directory = os.path.join(input_directory, 'cleaning_algo_presentation1-50_v2')
+output_directory = os.path.join(input_directory, 'cleaning_algo_presentation1-50_v3')
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
@@ -14,7 +16,7 @@ os.makedirs(output_directory, exist_ok=True)
 index_pattern = re.compile(r"([α-ωΑ-Ωά-ώ\d:]+)\s{0,2}(?:[.ο•]{4,}|(?:[.ο•]+\s{1,2})+[.ο•]+)(\s{0,2}σελ\.)?\s{0,2}\d+(?!\S)")
 
 # Pattern for bibliography
-bibliography_pattern = re.compile(r".*βιβλιογραφ[ιί]α.*")
+bibliography_pattern = re.compile(r".*βιβλιογραφια.*")
 
 def process_file(file_path):
     last_index_line_number = 0
@@ -40,12 +42,13 @@ def process_file(file_path):
     return last_index_line_number, bibliography_line_number, lines
 
 def find_bibliography_line(line):
+    # Removes combined characters ie accents from Greek letters
+    accentless_line = ''.join(c for c in unicodedata.normalize('NFD', line) if unicodedata.category(c) != 'Mn')
     # Remove any non-printable characters and collapse whitespace
-    concat_line = re.sub(r'[^\x20-\x7Eα-ωΑ-Ω]', '', line)  # Keeps only printable ASCII and Greek characters
-    concat_line = re.sub(r'\s+', '', concat_line)  # Remove remaining spaces
+    concat_line = re.sub(r'[^α-ωΑ-Ω]', '', accentless_line)  # Keeps only printable ASCII and Greek characters
     if len(concat_line) < 40:
-        concat_line = concat_line.lower()
-        return bibliography_pattern.match(concat_line)
+        match = bibliography_pattern.match( concat_line.lower() )
+        return match
     else:
         return False
 
