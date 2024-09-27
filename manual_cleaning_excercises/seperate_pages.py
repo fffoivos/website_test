@@ -1,12 +1,12 @@
 import os
 import re
 import unicodedata
-import math
+import pandas as pd
 
 # Define the directory paths
-input_directory = '/home/fivos/Desktop/151-200'
+input_directory = '/home/fivos/Projects/GlossAPI/manual_cleaning_excercises/check_papers/1-50'
 # Outputs here:
-output_directory = os.path.join(input_directory, '/home/fivos/Desktop/151-200/cleaning_algo_presentation151-200_v3')
+output_directory = os.path.join(input_directory, 'cleaning_algo_presentation1-50_v3')
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
@@ -47,29 +47,12 @@ def find_bibliography_line(line):
     # Remove any non-printable characters and collapse whitespace
     concat_line = re.sub(r'[^α-ωΑ-Ω]', '', accentless_line)  # Keeps only Greek characters
     if len(concat_line) < 40:
-        match = bibliography_pattern.match( concat_line.lower() )
+        match = bibliography_pattern.match(concat_line.lower())
         return match
     else:
         return False
 
-def print_presentation(file_distances):
-    # Calculate the top x% files with the longest distances
-    total_files = len(file_distances)
-    prcnt = 0.2
-    top_n = max(1, math.ceil(total_files * prcnt))
-    # Sort the files by distance in descending order
-    sorted_files = sorted(file_distances, key=lambda x: x[1], reverse=True)
-    top_files = sorted_files[:top_n]
-    
-    # Print the names and distances of the top 5% files
-    print(f"\nTop {str(prcnt*100)}% files with the longest distance from bibliography_line to end of file:")
-    for filename, distance in top_files:
-        print(f"{filename}: {distance} lines after bibliography_line")
-
 def main():
-    # List to store distances from bibliography_line to end of file
-    file_distances = []
-
     # Process each file in the input directory
     for filename in os.listdir(input_directory):
         file_path = os.path.join(input_directory, filename)
@@ -82,40 +65,55 @@ def main():
         print(f"Processing {filename}")
         last_index_line_number, bibliography_line_number, lines = process_file(file_path)
         
-        txt_length = len(lines)
-        distance = txt_length - bibliography_line_number  # Distance from bibliography_line to end of file
-        
-        # Store the filename and distance
-        file_distances.append((filename, distance))
-        
-        # Prepare output lines
-        output_lines = []
+        # Prepare output data array
+        data = []
         inside_content = False
+        first_10_in = []
+        first_10_out = []
         for line_number, line in enumerate(lines, 1):
             if line_number == last_index_line_number + 1:
                 # Start of content
-                output_lines.append("[=== ΑΡΧΉ ΚΑΘΑΡΙΣΜΈΝΟΥ ΑΡΧΕΊΟΥ ===]\n")
                 inside_content = True
             if line_number == bibliography_line_number + 1:
                 # End of content
-                output_lines.append("[=== ΤΈΛΟΣ ΚΑΘΑΡΙΣΜΈΝΟΥ ΑΡΧΕΊΟΥ ===]\n")
                 inside_content = False
-            if inside_content:
-                output_lines.append(line)
-            else:
-                output_lines.append("[ΕΚΤΟΣ] " + line)
+            
+            # Determine the status of the line (whether inside or outside the content)
+            status = 'IN' if inside_content else 'OUT'
+            
+            # Store line data in a list
+            data.append({
+                'page_num': line_number,
+                'text': line.strip(),
+                'status': status
+            })
+
+            # Collect the first 10 "IN" and "OUT" lines
+            if status == 'IN' and len(first_10_in) < 10:
+                first_10_in.append((line_number, line.strip()))
+            if status == 'OUT' and len(first_10_out) < 10:
+                first_10_out.append((line_number, line.strip()))
+
+        # Display the first 10 lines that are "IN"
+        if first_10_in:
+            print(f"\nFirst 10 'IN' lines for {filename}:")
+            for num, content in first_10_in:
+                print(f"{num}: {content}")
+
+        # Display the first 10 lines that are "OUT"
+        if first_10_out:
+            print(f"\nFirst 10 'OUT' lines for {filename}:")
+            for num, content in first_10_out:
+                print(f"{num}: {content}")
+
+        # Convert the list to a pandas DataFrame
+        df = pd.DataFrame(data)
         
-        # If content goes till the end of file, ensure we add the end marker
-        if inside_content:
-            output_lines.append("[=== ΤΈΛΟΣ ΚΑΘΑΡΙΣΜΈΝΟΥ ΑΡΧΕΊΟΥ ===]\n")
+        # Save the DataFrame to a CSV file in the output directory
+        output_file_path = os.path.join(output_directory, f'{filename}.csv')
+        df.to_csv(output_file_path, index=False, encoding='utf-8')
         
-        # Write the transformed lines to the output file
-        output_file_path = os.path.join(output_directory, filename)
-        with open(output_file_path, 'w', encoding='utf-8') as output_file:
-            output_file.writelines(output_lines)
-        
-        #print_presentation(file_distances)
-    
+        print(f"Data saved to {output_file_path}")
 
 if __name__ == '__main__':
     main()
