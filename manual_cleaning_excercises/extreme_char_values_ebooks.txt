@@ -1,0 +1,183 @@
+paper_605.txt: 364.00 avg chars/line
+
+paper_633.txt: 16.06 avg chars/line
+
+paper_466.txt: 15.47 avg chars/line
+
+paper_140.txt: 14.21 avg chars/line
+
+paper_627.txt: 5.96 avg chars/line
+
+paper_137.txt: 14.46 avg chars/line
+
+paper_487.txt: 4.61 avg chars/line
+
+paper_105.txt: 17.43 avg chars/line
+
+paper_42.txt: 5.03 avg chars/line
+
+paper_607.txt: 5.93 avg chars/line
+
+paper_463.txt: 178.99 avg chars/line
+
+paper_609.txt: 372.00 avg chars/line
+
+paper_125.txt: 13.67 avg chars/line
+
+paper_544.txt: 8.41 avg chars/line
+
+paper_265.txt: 17.43 avg chars/line
+
+paper_348.txt: 14.82 avg chars/line
+
+paper_584.txt: 15.97 avg chars/line
+
+paper_324.txt: 364.00 avg chars/line
+
+paper_673.txt: 12.62 avg chars/line
+
+paper_442.txt: 13.84 avg chars/line
+
+paper_580.txt: 8.41 avg chars/line
+
+paper_310.txt: 11.52 avg chars/line
+
+paper_169.txt: 6.83 avg chars/line
+
+paper_415.txt: 13.86 avg chars/line
+
+paper_444.txt: 13.67 avg chars/line
+
+paper_436.txt: 180.00 avg chars/line
+
+paper_563.txt: 11.25 avg chars/line
+
+paper_577.txt: 13.32 avg chars/line
+
+paper_399.txt: 220.00 avg chars/line
+
+paper_671.txt: 15.97 avg chars/line
+
+paper_318.txt: 182.00 avg chars/line
+
+paper_512.txt: 220.00 avg chars/line
+
+paper_341.txt: 8.37 avg chars/line
+
+paper_163.txt: 5.96 avg chars/line
+
+paper_262.txt: 56.68 avg chars/line
+
+paper_503.txt: 521.00 avg chars/line
+
+paper_312.txt: 8.41 avg chars/line
+
+paper_142.txt: 6.68 avg chars/line
+
+paper_509.txt: 11.52 avg chars/line
+
+paper_600.txt: 7.28 avg chars/line
+
+paper_72.txt: 11.32 avg chars/line
+
+paper_243.txt: 7.28 avg chars/line
+
+paper_520.txt: 14.91 avg chars/line
+
+paper_194.txt: 11.52 avg chars/line
+
+paper_550.txt: 11.25 avg chars/line
+
+paper_533.txt: 8.37 avg chars/line
+
+paper_400.txt: 56.68 avg chars/line
+
+paper_52.txt: 13.67 avg chars/line
+
+paper_206.txt: 16.30 avg chars/line
+
+paper_566.txt: 13.84 avg chars/line
+
+paper_524.txt: 15.97 avg chars/line
+
+paper_373.txt: 16.30 avg chars/line
+
+paper_518.txt: 13.32 avg chars/line
+
+paper_411.txt: 16.30 avg chars/line
+
+paper_268.txt: 7.44 avg chars/line
+
+paper_196.txt: 16.30 avg chars/line
+
+paper_447.txt: 6.58 avg chars/line
+
+paper_107.txt: 7.44 avg chars/line
+
+paper_172.txt: 5.93 avg chars/line
+
+paper_212.txt: 14.82 avg chars/line
+
+paper_334.txt: 15.97 avg chars/line
+
+paper_100.txt: 8.41 avg chars/line
+
+paper_8.txt: 6.68 avg chars/line
+
+paper_614.txt: 9.21 avg chars/line
+
+paper_558.txt: 6.29 avg chars/line
+
+paper_263.txt: 6.58 avg chars/line
+
+paper_343.txt: 178.99 avg chars/line
+
+paper_364.txt: 6.58 avg chars/line
+
+paper_15.txt: 13.67 avg chars/line
+
+paper_300.txt: 12.62 avg chars/line
+
+paper_545.txt: 11.32 avg chars/line
+
+paper_687.txt: 6.29 avg chars/line
+
+paper_573.txt: 4.61 avg chars/line
+
+paper_655.txt: 13.86 avg chars/line
+
+paper_452.txt: 13.32 avg chars/line
+
+paper_285.txt: 182.00 avg chars/line
+
+paper_726.txt: 13.67 avg chars/line
+
+paper_239.txt: 13.32 avg chars/line
+
+paper_350.txt: 9.21 avg chars/line
+
+paper_123.txt: 12.62 avg chars/line
+
+paper_111.txt: 13.67 avg chars/line
+
+paper_570.txt: 16.06 avg chars/line
+
+paper_508.txt: 14.82 avg chars/line
+
+paper_587.txt: 180.00 avg chars/line
+
+paper_338.txt: 5.03 avg chars/line
+
+paper_349.txt: 14.82 avg chars/line
+
+paper_634.txt: 372.00 avg chars/line
+
+paper_729.txt: 521.00 avg chars/line
+
+paper_506.txt: 12.44 avg chars/line
+
+paper_102.txt: 15.47 avg chars/line
+
+paper_283.txt: 14.91 avg chars/line
+
+paper_438.txt: 6.58 avg chars/line
