@@ -4,9 +4,9 @@ import unicodedata
 import math
 
 # Define the directory paths
-input_directory = '/home/fivos/Projects/GlossAPI/manual_cleaning_excercises/check_papers/59-123'
+input_directory = '/home/fivos/Projects/GlossAPI/downloaded_texts/kallipos/extracted_pdfs'
 # Outputs here:
-output_directory = os.path.join(input_directory, '/home/fivos/Projects/GlossAPI/manual_cleaning_excercises/check_papers/59-123/cleaning_algo_presentation59-123v4')
+output_directory = os.path.join(input_directory, 'cleaning_presentation')
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)

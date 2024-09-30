@@ -1,86 +1,179 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import os
-import csv
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# File path for the statistics
-statistics_folder = '/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_extracted_pdfs/cleaned_filtered_extracted_pdfs/statistics'
-file_path = os.path.join(statistics_folder, 'removal_statistics.txt')
+# ==================== Configuration ====================
 
-# Variables to hold sum of averages and count of files
-file_data = []
+# Define multipliers for lower and upper IQR bounds
+# To **tighten** bounds: decrease multipliers
+# To **loosen** bounds: increase multipliers
+MULTIPLIERS = {
+    'avg_chars_per_line': {
+        'lower': 0.4,  # Lower value tightens lower bound
+        'upper': 1.4   # Lower value tightens upper bound
+    },
+    'num_lines': {
+        'lower': 0.6,  # Lower value tightens lower bound
+        'upper': 1.8   # Lower value tightens upper bound
+    }
+}
 
-# Read file and extract information
-with open(file_path, 'r') as f:
-    for line in f:
-        # Skip lines that are not file statistics
-        if line.startswith("paper"):
-            parts = line.split(',')
-            file_name = parts[0].split(':')[0].strip()
-            avg_chars_per_line = float(parts[2].split()[0])
-            
-            # Append file data for further processing
-            file_data.append((file_name, avg_chars_per_line))
+# Columns to apply IQR bounds
+COLUMNS_TO_BOUND = ['avg_chars_per_line', 'num_lines']
 
-# Extract the average characters per line for all files
-avg_chars_per_line_list = np.array([avg for _, avg in file_data])
+# ========================================================
 
-# Calculate the IQR
-Q1 = np.percentile(avg_chars_per_line_list, 25)
-Q3 = np.percentile(avg_chars_per_line_list, 75)
-IQR = Q3 - Q1
+# Set folder paths
+folder_path = "/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_extracted_pdfs/cleaned_filtered_extracted_txt"
+statistics_folder = os.path.join(folder_path, "statistics")
 
-# Separate multipliers for the lower and upper bounds
-lower_multiplier = 0.5  # Tighten the lower bound more aggressively
-upper_multiplier = 1.5  # Keep or relax the upper bound
+# Create statistics folder if it doesn't exist
+os.makedirs(statistics_folder, exist_ok=True)
 
-# Define the lower and upper bounds for outliers
-lower_bound = Q1 - lower_multiplier * IQR
-upper_bound = Q3 + upper_multiplier * IQR
+# Collect file statistics
+file_stats = []
+for filename in os.listdir(folder_path):
+    if filename.endswith(".txt"):
+        file_path = os.path.join(folder_path, filename)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                lines = file.readlines()
+                num_lines = len(lines)
+                total_chars = sum(len(line) for line in lines)
+                avg_chars_per_line = total_chars / num_lines if num_lines > 0 else 0
+                file_stats.append([filename, round(avg_chars_per_line, 1), num_lines, total_chars])
+        except Exception as e:
+            print(f"Error processing {filename}: {e}")
 
-# Function to detect outliers based on the adjusted bounds
-def is_extreme_value(avg_chars_per_line, lower_bound, upper_bound):
-    return avg_chars_per_line < lower_bound or avg_chars_per_line > upper_bound
+# Create DataFrame and save
+df = pd.DataFrame(file_stats, columns=['filename', 'avg_chars_per_line', 'num_lines', 'total_chars'])
+df.to_csv(os.path.join(statistics_folder, 'file_statistics.csv'), index=False)
 
-# Plot the data
-def plot_data(avg_chars_per_line_list, lower_bound, upper_bound):
+# ==================== Outlier Detection ====================
+
+# Function to calculate IQR bounds
+def calculate_iqr_bounds(series, lower_multiplier=1.5, upper_multiplier=1.5):
+    Q1 = series.quantile(0.25)
+    Q3 = series.quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - lower_multiplier * IQR
+    upper_bound = Q3 + upper_multiplier * IQR
+    return lower_bound, upper_bound
+
+# Calculate bounds for each column
+iqr_bounds = {}
+for column in COLUMNS_TO_BOUND:
+    multipliers = MULTIPLIERS.get(column, {'lower': 1.5, 'upper': 1.5})
+    lower, upper = calculate_iqr_bounds(df[column], multipliers['lower'], multipliers['upper'])
+    iqr_bounds[column] = (lower, upper)
+
+# Display IQR bounds and extreme value ranges
+print("IQR-based bounds and Extreme Value Ranges:")
+for column, bounds in iqr_bounds.items():
+    # Identify outliers for the current column
+    outliers = df[(df[column] < bounds[0]) | (df[column] > bounds[1])][column]
+    if not outliers.empty:
+        min_outlier = outliers.min()
+        max_outlier = outliers.max()
+        print(f"  {column}: {bounds[0]:.2f} - {bounds[1]:.2f}")
+        print(f"    Extreme values: {min_outlier:.2f} - {max_outlier:.2f}")
+    else:
+        print(f"  {column}: {bounds[0]:.2f} - {bounds[1]:.2f}")
+        print(f"    Extreme values: None")
+
+# Plot histograms with IQR bounds
+for column in COLUMNS_TO_BOUND:
     plt.figure(figsize=(10, 6))
-    plt.hist(avg_chars_per_line_list, bins=30, color='skyblue', edgecolor='black', alpha=0.7)
-    
-    # Highlight adjusted IQR bounds
-    plt.axvline(lower_bound, color='green', linestyle='dashed', linewidth=2, label=f"Lower Bound: {lower_bound:.2f}")
-    plt.axvline(upper_bound, color='green', linestyle='dashed', linewidth=2, label=f"Upper Bound: {upper_bound:.2f}")
-    
-    plt.title('Distribution of Average Characters per Line (with Separate Bounds)')
-    plt.xlabel('Average Characters per Line')
+    plt.hist(df[column], bins=30, alpha=0.7, color='b', edgecolor='black')
+    plt.axvline(iqr_bounds[column][0], color='r', linestyle='dashed', linewidth=2, label='Lower Bound')
+    plt.axvline(iqr_bounds[column][1], color='g', linestyle='dashed', linewidth=2, label='Upper Bound')
+    plt.title(f'Distribution of {column} with IQR Bounds')
+    plt.xlabel(column)
     plt.ylabel('Frequency')
     plt.legend()
+    plt.savefig(os.path.join(statistics_folder, f'{column}_iqr_bounds.png'))
+    plt.close()
 
-    # Save the plot in the statistics subfolder
-    plot_file_path = os.path.join(statistics_folder, 'average_chars_per_line_distribution.png')
-    plt.savefig(plot_file_path)
-    plt.show()
+# Identify outliers for each column
+out_of_bound_dfs = {}
+for column in COLUMNS_TO_BOUND:
+    lower, upper = iqr_bounds[column]
+    condition = (df[column] < lower) | (df[column] > upper)
+    out_of_bound = df[condition][['filename']]
+    out_of_bound_dfs[column] = out_of_bound
 
-# Detect and print extreme values, and prepare for CSV output
-extreme_values = []
+# Identify all outlier filenames (outliers in either column)
+outlier_filenames = pd.concat(out_of_bound_dfs.values())['filename'].unique()
 
-for file_name, avg_chars_per_line in file_data:
-    if is_extreme_value(avg_chars_per_line, lower_bound, upper_bound):
-        extreme_values.append((file_name, avg_chars_per_line))
+# Exclude these files from corpus statistics
+filtered_df = df[~df['filename'].isin(outlier_filenames)]
 
-# Save extreme values to CSV
-csv_file_path = os.path.join(statistics_folder, 'extraction_errors.csv')
-with open(csv_file_path, mode='w', newline='') as csv_file:
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['file_name', 'extract_error'])  # Header
-    for file_name, avg_chars_per_line in extreme_values:
-        csv_writer.writerow([file_name, 1])  # Marking extract_error as 1
+# ==================== Corpus Statistics ====================
 
-# Print the bounds for reference
-print(f"Interquartile Range (IQR): {IQR:.2f}")
-print(f"Lower Bound (Q1 - {lower_multiplier} * IQR): {lower_bound:.2f}")
-print(f"Upper Bound (Q3 + {upper_multiplier} * IQR): {upper_bound:.2f}\n")
-print(f"CSV saved at: {csv_file_path}")
+# Calculate corpus-level stats from filtered_df
+average_avg_chars_per_line = filtered_df['avg_chars_per_line'].mean()
+average_num_lines = filtered_df['num_lines'].mean()
+average_total_chars = filtered_df['total_chars'].mean()
 
-# Plot the data with the adjusted bounds
-plot_data(avg_chars_per_line_list, lower_bound, upper_bound)
+sum_num_lines = filtered_df['num_lines'].sum()
+sum_total_chars = filtered_df['total_chars'].sum()
+
+file_count = filtered_df.shape[0]
+
+# Prepare and save corpus_statistics.txt
+corpus_stats_content = (
+    f"Corpus Statistics\n"
+    f"=================\n"
+    f"Total Files Processed: {file_count}\n"
+    f"Total Number of Lines: {sum_num_lines}\n"
+    f"Total Number of Characters: {sum_total_chars}\n\n"
+    f"Average Characters per Line: {average_avg_chars_per_line:.2f}\n"
+    f"Average Number of Lines per File: {average_num_lines:.2f}\n"
+    f"Average Number of Characters per File: {average_total_chars:.2f}\n\n"
+    f"IQR Multipliers Used for Analysis:\n"
+    f"-----------------------------------\n"
+)
+
+# Append multipliers information
+for metric, multipliers in MULTIPLIERS.items():
+    corpus_stats_content += (
+        f"{metric}:\n"
+        f"  Lower Multiplier: {multipliers['lower']}\n"
+        f"  Upper Multiplier: {multipliers['upper']}\n"
+    )
+
+with open(os.path.join(statistics_folder, 'corpus_statistics.txt'), 'w', encoding='utf-8') as stats_file:
+    stats_file.write(corpus_stats_content)
+
+# ===========================================================
+
+# Combine all outliers into extreme_values.csv
+# Include outliers from either column
+all_outliers = df[df['filename'].isin(outlier_filenames)].copy()
+all_outliers['extraction_error'] = 1
+
+# Save extreme_values.csv with required columns
+columns_to_save = ['filename', 'avg_chars_per_line', 'num_lines', 'extraction_error']
+all_outliers.to_csv(os.path.join(statistics_folder, 'extreme_values.csv'), columns=columns_to_save, index=False)
+
+# Print outliers per column
+for column in COLUMNS_TO_BOUND:
+    print(f"\nFiles out of bounds for {column}:")
+    out_of_bound = out_of_bound_dfs[column][['filename']]
+    if not out_of_bound.empty:
+        print(out_of_bound.to_string(index=False))
+    else:
+        print("  None")
+
+# Print files outliers in both columns
+print("\nFiles out of bounds for both average characters per line and number of lines:")
+# To find files that are outliers in both columns, intersect the outlier sets
+outliers_avg = set(out_of_bound_dfs['avg_chars_per_line']['filename'])
+outliers_num = set(out_of_bound_dfs['num_lines']['filename'])
+outliers_both = outliers_avg.intersection(outliers_num)
+
+if outliers_both:
+    outlier_both_details = df[df['filename'].isin(outliers_both)][['filename', 'avg_chars_per_line', 'num_lines']]
+    print(outlier_both_details.to_string(index=False))
+else:
+    print("  None")
