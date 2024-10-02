@@ -63,5 +63,5 @@ def manage_papers(folder_path):
                 print(" ")
 
 if __name__ == "__main__":
-    folder_path = '/home/fivos/Desktop/cleaned_filtered_extracted_sxolika/filtered_by_JSON'
+    folder_path = '/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_by_JSON/cleaned_filtered_extracted_txt'
     manage_papers(folder_path)

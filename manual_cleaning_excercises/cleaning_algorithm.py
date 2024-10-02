@@ -3,7 +3,7 @@ import re
 import unicodedata
 
 # Define the directory paths
-input_directory = '/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_extracted_pdfs'
+input_directory = '/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_by_JSON'
 output_directory = os.path.join(input_directory, 'cleaned_filtered_extracted_txt')
 
 # Create the output directory if it doesn't exist
@@ -13,8 +13,8 @@ os.makedirs(output_directory, exist_ok=True)
 index_pattern = re.compile(r"([α-ωΑ-Ωά-ώ\d:]+)\s{0,4}(?:[.ο•]{4,}|(?:[.ο•]+\s{1,2})+[.ο•]+)(\s{0,2}σελ\.)?\s{0,4}\d+(?!\S)")
 bibliography_pattern = re.compile(r".*βιβλιογραφια.*", re.IGNORECASE)
 legal_statement_pattern = re.compile(r".*Βάσει του ν\. 3966/2011 τα διδακτικά βιβλία.*", re.IGNORECASE)
-page_seven_adobe_format = re.compile(r".+\.(indd|indb)\s{0,3}[7]")
-page_seven_other_format = re.compile(r"\d{1,2}\/\d{1,2}\/\d{2}\s+\d{1,2}:\d{2}\s+(?:AM|PM)\s+Page\s+7")
+page_seven_adobe_format = re.compile(r".+\.(indd|indb)\s+[7]($|\n)")
+page_seven_other_format = re.compile(r".*?\d{2}\/\d{2}\/\d{2}\s+\d{2}:\d{2}\s+Page\s+7($|\n)")
 
 # Functions
 def find_bibliography_line(line):
@@ -38,6 +38,9 @@ def process_file(file_path):
         bibliography_line_number = txt_length
         
         for line_number, line in enumerate(lines, 1):
+            if (line_number / txt_length) < 0.5 and page_seven_adobe_format.search(line) or page_seven_other_format.search(line):
+                seventh_page_line_number = line_number
+            
             if (line_number / txt_length) < 0.5 and index_pattern.search(line):
                 last_index_line_number = line_number
             

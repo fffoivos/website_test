@@ -4,8 +4,8 @@ import json
 import re
 
 # Define paths
-input_folder = "/home/fivos/Desktop/cleaned_filtered_extracted_sxolika"
-json_input_file = os.path.join(input_folder, "filtered_extracted_files.JSON")
+input_folder = "/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs"
+json_input_file = os.path.join(input_folder, "extracted_files.json")
 
 # Define the path for the 'filtered_by_JSON' folder
 filtered_folder = os.path.join(input_folder, "filtered_by_JSON")
