@@ -3,7 +3,7 @@ import re
 import unicodedata
 
 # Define the directory paths
-input_directory = '/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_by_JSON'
+input_directory = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/'
 output_directory = os.path.join(input_directory, 'cleaned_filtered_extracted_txt')
 
 # Create the output directory if it doesn't exist

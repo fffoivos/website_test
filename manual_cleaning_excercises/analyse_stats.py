@@ -24,7 +24,7 @@ COLUMNS_TO_BOUND = ['avg_chars_per_line', 'num_lines']
 # ========================================================
 
 # Set folder paths
-folder_path = "/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks/extracted_pdfs/filtered_by_JSON/cleaned_filtered_extracted_txt"
+folder_path = "/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/"
 statistics_folder = os.path.join(folder_path, "statistics")
 
 # Create statistics folder if it doesn't exist

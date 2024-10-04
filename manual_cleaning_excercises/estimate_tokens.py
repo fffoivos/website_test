@@ -62,6 +62,6 @@ def process_folder(folder_path, cleaning_factor=0.0, avg_chars_per_word=5, avg_c
     print(f"Result saved in {result_file_path}")
 
 # Example usage
-folder_path = 'path_to_your_folder'  # Replace with the actual folder path
+folder_path = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/'  # Replace with the actual folder path
 cleaning_factor = 0.0  # Adjust the cleaning factor as needed (0.0 means no reduction)
 process_folder(folder_path, cleaning_factor)
