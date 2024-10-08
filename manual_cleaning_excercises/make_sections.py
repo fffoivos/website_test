@@ -1,116 +1,91 @@
 import os
 import csv
+import pandas as pd
 import re
-from typing import List, Tuple
+from collections import Counter
 
-def is_capitalized_line(line: str) -> bool:
-    return bool(re.match(r'^[Α-ΩΆΈΉΊΌΎΏ\s:-]+$', line.strip()))
+def is_uppercase_greek(text):
+    # Split the text by spaces
+    words = text.split()
+    if not words:
+        return []
 
-def extract_page_heading(text: str) -> Tuple[str, str]:
-    lines = text.split('\n')
-    for i, line in enumerate(lines):
-        if is_capitalized_line(line):
-            return line.strip(), '\n'.join(lines[i+1:])
-    return '', text
+    # Regular expression pattern to match Greek UPPERCASE letters and not lower case
+    greek_uppercase_pattern = r'^((?!.*→α-ωά-ώ)[Α-ΩΆ-Ώ\d:\- ]+)$'
 
-def process_text(text: str) -> Tuple[str, str, str, str]:
-    page_heading, text = extract_page_heading(text)
-    lines = text.split('\n')
-    section_heading = ''
-    cleaned_text = []
-    removed_uppercase = []
-    
-    i = 0
-    while i < len(lines):
-        if is_capitalized_line(lines[i]):
-            if i + 1 < len(lines) and not is_capitalized_line(lines[i+1]):
-                section_heading = lines[i].strip()
-                i += 1
-            else:
-                start = i
-                while i < len(lines) and is_capitalized_line(lines[i]):
-                    i += 1
-                removed_uppercase.extend(lines[start:i])
+    # Collect all fully uppercase Greek words until a non-uppercase word is found
+    uppercase_greek_words = []
+    for word in words:
+        if ( word.isupper() and re.match(greek_uppercase_pattern, word) ) or word in ["-", ":"] or word.isdigit():
+            uppercase_greek_words.append(word)
         else:
-            cleaned_text.append(lines[i])
-        i += 1
+            break
     
-    return page_heading, section_heading, '\n'.join(cleaned_text), '\n'.join(removed_uppercase)
+    for word in uppercase_greek_words:
+        if word == "→":
+            return []
+        if len(word) > 1 and not word.isdigit():
+            return uppercase_greek_words
+    
+    return []
 
-def process_csv_file(input_file: str, output_folder: str):
+def process_csv_file(input_file, output_folder):
     print(f"Processing file: {os.path.basename(input_file)}")
-    output_rows = []
-    index = 1
-
-    with open(input_file, 'r', newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        current_section = ''
-        current_text = ''
-        current_pages = []
-        current_page_headings = []
-
-        for row in reader:
-            page_heading, section_heading, cleaned_text, removed_uppercase = process_text(row['text'])
+    # Read the CSV file
+    df = pd.read_csv(input_file)
+    
+    # Add new column for removed page headings
+    df['Removed page heading'] = ''
+    
+    # Initialize variables
+    current_page = df['page'].iloc[0]
+    rows_to_remove = []
+    
+    # Iterate through the dataframe
+    for i in range(1, len(df)):
+        if df['page'].iloc[i] > current_page:
+            # Page change detected
+            start_index = i
+            end_index = None
             
-            if section_heading:
-                if current_section:
-                    output_rows.append({
-                        'index': index,
-                        'text': current_text.strip().replace('\n', ' '),
-                        'pages': '-'.join(map(str, current_pages)),
-                        'page_headings': ', '.join(current_page_headings),
-                        'section_heading': current_section,
-                        'removed_uppercase': ''
-                    })
-                    index += 1
-                current_section = section_heading
-                current_text = cleaned_text
-                current_pages = [int(row['page'])]
-                current_page_headings = [page_heading]
-            else:
-                current_text += ' ' + cleaned_text
-                current_pages.append(int(row['page']))
-                current_page_headings.append(page_heading)
+            # Search for the first UP == 1 within the next 6 rows
+            for j in range(i, min(i + 6, len(df))):
+                if df['UP'].iloc[j] == 1:
+                    end_index = j
+                    break
             
-            if removed_uppercase:
-                output_rows.append({
-                    'index': index,
-                    'text': '',
-                    'pages': row['page'],
-                    'page_headings': page_heading,
-                    'section_heading': '',
-                    'removed_uppercase': removed_uppercase.replace('\n', ' ')
-                })
-                index += 1
+            if end_index is not None:
+                # Extract and store the header text
+                header_text = ' '.join(df['text'].iloc[start_index:end_index])
+                df.at[start_index, 'Removed page heading'] = header_text
+                
+                # Mark rows for removal
+                rows_to_remove.extend(range(start_index, end_index))
+            
+            # Update current page
+            current_page = df['page'].iloc[i]
+    
+    # Remove marked rows
+    df = df.drop(rows_to_remove)
+    
+    # Reset index
+    df = df.reset_index(drop=True)
+    
+    # Write the new dataframe to a CSV file
+    output_file = os.path.join(output_folder, os.path.basename(input_file).replace('.csv', '_processed.csv'))
+    df.to_csv(output_file, index=False)
 
-        # Add the last section
-        if current_section:
-            output_rows.append({
-                'index': index,
-                'text': current_text.strip().replace('\n', ' '),
-                'pages': '-'.join(map(str, current_pages)),
-                'page_headings': ', '.join(current_page_headings),
-                'section_heading': current_section,
-                'removed_uppercase': ''
-            })
-
-    # Write to output TSV
-    output_file = os.path.join(output_folder, os.path.basename(input_file).replace('.csv', '_split.tsv'))
-    with open(output_file, 'w', newline='', encoding='utf-8') as tsvfile:
-        fieldnames = ['index', 'text', 'pages', 'page_headings', 'section_heading', 'removed_uppercase']
-        writer = csv.DictWriter(tsvfile, fieldnames=fieldnames, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writeheader()
-        writer.writerows(output_rows)
-
-def process_csv_files(input_folder: str):
-    output_folder = os.path.join(input_folder, "section_split")
+def process_csv_files(input_folder):
+    # Create the output folder
+    output_folder = os.path.join(input_folder, "test")
     os.makedirs(output_folder, exist_ok=True)
-
+    
+    # Iterate over all CSV files in the input folder
     for filename in os.listdir(input_folder):
         if filename.endswith('.csv'):
             input_file = os.path.join(input_folder, filename)
             process_csv_file(input_file, output_folder)
 
 # Usage
-input_folder = '/home/fivos/Desktop/cleaned_filtered_extracted_txt/fine_cleaning/extracted_pages'
+input_folder = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/fine_cleaning_v2/extracted_pages/'
 process_csv_files(input_folder)

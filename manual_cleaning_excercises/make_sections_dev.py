@@ -67,7 +67,10 @@ def process_csv_file(input_file, output_folder):
     
     # Count the occurrences of each text
     text_counts = Counter(new_df['text'])
-    new_df['repeats'] = new_df['text'].apply(lambda x: x if text_counts[x] > 5 else '')
+    new_df['repeats'] = new_df['text'].apply(lambda x: x if text_counts[x] > 5 else ''
+    # Iterate over all CSV files in the input folder
+    for filename in os.listdir(input_folder):
+        if filename.endswith('.csv'):)
     
     # Write the new dataframe to a CSV file
     output_file = os.path.join(output_folder, os.path.basename(input_file).replace('.csv', '_sections.csv'))
@@ -85,5 +88,5 @@ def process_csv_files(input_folder):
             process_csv_file(input_file, output_folder)
 
 # Usage
-input_folder = '/home/fivos/Desktop/cleaned_filtered_extracted_txt/fine_cleaning/extracted_pages'
+input_folder = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/fine_cleaning_v2/extracted_pages/'
 process_csv_files(input_folder)

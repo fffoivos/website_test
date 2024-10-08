@@ -64,5 +64,5 @@ def process_directory(input_dir):
             process_file(file_path, output_dir)
 
 # Example usage
-input_folder = '/home/fivos/Desktop/cleaned_filtered_extracted_txt'
+input_folder = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/fine_cleaning_v2/'
 process_directory(input_folder)

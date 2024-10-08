@@ -4,7 +4,7 @@ import csv
 import unicodedata
 
 # Define the directory paths
-input_directory = '/home/fivos/Desktop/cleaned_filtered_extracted_txt'
+input_directory = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/'
 # Outputs here:
 output_directory = os.path.join(input_directory, 'fine_cleaning_v2')
 

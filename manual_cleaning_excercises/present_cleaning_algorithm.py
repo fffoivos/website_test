@@ -4,7 +4,7 @@ import unicodedata
 import math
 
 # Define the directory paths
-input_directory = '/home/fivos/Projects/GlossAPI/downloaded_texts/kallipos/extracted_pdfs'
+input_directory = '/home/fivos/Desktop/ebook_pdfs/paste_texts/'
 # Outputs here:
 output_directory = os.path.join(input_directory, 'cleaning_presentation')
 
