@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def main():
-    input_folder = "/home/fivos/Desktop/ebook_pdfs/"  # Replace with your input folder path
+    input_folder = "/home/fivos/Projects/GlossAPI/downloaded_texts/ebooks/ebooks"  # Replace with your input folder path
     output_folder = os.path.join(input_folder, "paste_texts")
 
     # Create 'paste_texts' folder if it doesn't exist
