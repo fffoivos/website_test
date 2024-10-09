@@ -3,7 +3,7 @@ import re
 import csv
 
 # Define the page marker regex
-page_marker_regex = re.compile(r'.+\.(?:indd|indb)\s{0,3}(\d+)')
+page_marker_regex = re.compile(r'^((\d){1,2}|(. (\d) .)|\[(\d)\]|[ivxc]{1,6})')
 
 # Function to process a single text file and save to CSV
 def process_file(file_path, output_dir):
@@ -64,5 +64,5 @@ def process_directory(input_dir):
             process_file(file_path, output_dir)
 
 # Example usage
-input_folder = '/home/fivos/Desktop/New Folder/Sxolika/filtered_by_JSON/cleaned_filtered_extracted_txt/fine_cleaning_v2/'
+input_folder = '/home/fivos/Desktop/Projects/GlossAPI/raw_txt/sxolika/paste_texts'
 process_directory(input_folder)

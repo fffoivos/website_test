@@ -13,13 +13,12 @@ os.makedirs(output_directory, exist_ok=True)
 
 # Intended match: Greek_words, optional space, more than 3 dots, optional space and/or "σελ.", finally a number and nothing else concatenated to it.
 #   eg 'ΠΡΟΚΑΤΑΡΚΤΙΚΕΣ ΕΡΓΑΣΙΕΣ ΣΥΝΤΗΡΗΣΗΣ ........................................................50'
-index_pattern = re.compile(r"([α-ωΑ-Ωά-ώ\d:]+)\s{0,4}(?:[.ο•]{4,}|(?:[.ο•]+\s{1,2})+[.ο•]+)(\s{0,2}σελ\.)?\s{0,4}\d+(?!\S)")
+index_pattern = re.compile(r"^([Α-Ω]\. )?((\d{1,2}\.)*(\d)?)? {0,4}(\.*)\s{0,2}[Α-ΩΆ-ΏA-Z](([a-zA-Zα-ωΑ-Ωά-ώ-.:])+ \d{0,2})+\s{0,4}(\.)*(\s{0,2}(σελ\.|Σελ\.\:|))?\s{0,4}\d+$")
 
 # Pattern for bibliography
 bibliography_pattern = re.compile(r".*βιβλιογραφια.*")
 legal_statement_pattern = re.compile(r".*Βάσει του ν\. 3966/2011 τα διδακτικά βιβλία.*", re.IGNORECASE)
-page_seven_adobe_format = re.compile(r".+\.(indd|indb)\s{0,3}[7]")
-page_seven_other_format = re.compile(r"\d{1,2}\/\d{1,2}\/\d{2}\s+\d{1,2}:\d{2}\s+(?:AM|PM)\s+Page\s+7")
+pagination_pattern = re.compile(r"^((\d){1,2}|(. (\d) .)|\[(\d)\]|(vi{0,3}))$")
 
 def find_bibliography_line(line):
     # Removes combined characters (accents) from Greek letters
@@ -37,11 +36,26 @@ def find_legal_statement_line(line):
     match = legal_statement_pattern.match(line.lower())
     return match
 
+def find_page_number(line):
+    match = pagination_pattern.search(line)
+    if match:
+        page = match.group(1)
+        if page.isdigit():
+            return int(page)
+        else:
+            if page == "v": return 5
+            elif page == "vi": return 6
+            elif page == "vii": return 7
+            elif page == "viii": return 8
+            else: return 0
+    return 0
+
 def process_file(file_path):
     last_index_line_number = 0
     bibliography_line_number = None
     legal_statement_line_number = None
-    seventh_page_line_number = None  # To store the line number of the page seven match
+    page_number = 0  # To store the line number of the page seven match
+    page_number_line = 1
 
     with open(file_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
@@ -57,8 +71,11 @@ def process_file(file_path):
                     last_index_line_number = line_number
                 
                 # Simultaneously check for the seventh page patterns and store the line if found
-                if seventh_page_line_number is None and (page_seven_adobe_format.search(line) or page_seven_other_format.search(line)):
-                    seventh_page_line_number = line_number
+                if page_number not in {7, 8}:
+                    new_page_number = find_page_number(line)
+                    if new_page_number - page_number > 0:
+                        page_number = new_page_number
+                        page_number_line = line_number
             
             # Check for bibliography after 90% of the document
             if (line_number / txt_length) > 0.9 and find_bibliography_line(line):
@@ -70,8 +87,8 @@ def process_file(file_path):
                 bibliography_line_number = line_number - 1
         
         # If no index pattern was found, fall back to the seventh page line number if it exists
-        if last_index_line_number == 0 and seventh_page_line_number is not None:
-            last_index_line_number = seventh_page_line_number
+        if last_index_line_number == 0 and page_number_line is not None:
+            last_index_line_number = page_number_line
     
     return last_index_line_number, bibliography_line_number, lines
 

@@ -4,8 +4,8 @@ import json
 import re
 
 # Define paths
-input_folder = "/home/fivos/Desktop/New Folder/Sxolika/"
-json_input_file = os.path.join(input_folder, "extracted_files.json")
+input_folder = "/home/fivos/Projects/GlossAPI/raw_txt/paste_texts"
+json_input_file = os.path.join(input_folder, "pasted_texts.json")
 
 # Define the path for the 'filtered_by_JSON' folder
 filtered_folder = os.path.join(input_folder, "filtered_by_JSON")
