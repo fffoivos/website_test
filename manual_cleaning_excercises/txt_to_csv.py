@@ -93,5 +93,5 @@ def process_txt_files(input_folder):
             print(f"Processed {filename} and saved as {os.path.basename(output_path)}")
 
 # Example usage
-input_folder = '/home/fivos/Desktop/Projects/GlossAPI/raw_txt/sxolika/paste_texts'
+input_folder = '/home/fivos/Desktop/paste_text_Filtered/'
 process_txt_files(input_folder)
