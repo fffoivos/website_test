@@ -15,14 +15,14 @@ bibliography_pattern = re.compile(r".*βιβλιογραφια([-–α-ωΑ-Ω\w
 bibliography_atend = re.compile(r"βιβλιογραφια {0,5}($|\n)", re.UNICODE)
 
 # Pattern to find lines with multiple dots
-dotted_pattern = re.compile(r"\.{5,}|…{3,}|(\. ){5,}")
+dotted_pattern = re.compile(r"\.{5,}|…{3,}|(\. ){5,}|_{3,}|(_ ){3,}")
 
 # Patterns to find chapter lines
 kefalaio_pattern = re.compile(r".*(κεφαλαιο:? {0,4}.*)(\n|$)", re.UNICODE)
 kefalaio_atend_pattern = re.compile(r"(\f| )(κεφαλαιο:? {0,4}.*)(\n|$)", re.UNICODE)
 enotita_pattern = re.compile(r".*(ενοτητα .*\d+.*)$", re.UNICODE)
 kef_pattern = re.compile(r".*κεφ\.\s.*", re.UNICODE)
-section_number = re.compile(r"(\d\d?)\.(\d\d?)\.(\d\d?)")
+section_number = re.compile(r"(\d\d?)\.(\d\d?)\.(\d\d?)?")
 
 # Patterns to find exercises
 askiseis_pattern = re.compile(r"ασκησεις", re.UNICODE)
@@ -33,6 +33,8 @@ erotiseis_askiseis_pattern = re.compile(r"ερωτησεις[\s-]*ασκησει
 fyllo_ergasias_pattern = re.compile(r"φυλλο\s+εργασιας(/αξιολογησης)?", re.UNICODE)
 askiseis_chapter_pattern = re.compile(r"ασκησεις\s+\w+\s+κεφαλαιου", re.UNICODE)
 erotimatologio_pattern = re.compile(r"ερωτηματολογιο", re.UNICODE)
+
+
 
 def remove_accents(line):
     line = line.lower()
