@@ -5,7 +5,8 @@ import unicodedata
 
 # Define the directory paths
 input_directory = '/home/fivos/Projects/GlossAPI/raw_txt/sxolika/paste_texts/xondrikos_katharismos_papers'
-output_directory = os.path.join(input_directory, 'fine_cleaning_v4')
+# Outputs here:
+output_directory = os.path.join(input_directory, 'fine_cleaning_v3')
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
@@ -14,7 +15,7 @@ os.makedirs(output_directory, exist_ok=True)
 bibliography_pattern = re.compile(r".*βιβλιογραφια([-–α-ωΑ-Ω\w]{0,10})($|\n)", re.UNICODE)
 bibliography_atend = re.compile(r"βιβλιογραφια {0,5}($|\n)", re.UNICODE)
 
-# Pattern to find lines with multiple dots
+# Corrected pattern to find lines with four or more dots
 dotted_pattern = re.compile(r"\.{5,}|…{3,}|(\. ){5,}")
 
 # Patterns to find chapter lines
@@ -24,15 +25,15 @@ enotita_pattern = re.compile(r".*(ενοτητα .*\d+.*)$", re.UNICODE)
 kef_pattern = re.compile(r".*κεφ\.\s.*", re.UNICODE)
 section_number = re.compile(r"(\d\d?)\.(\d\d?)\.(\d\d?)")
 
-# Patterns to find exercises
+# Patterns to find excercises
 askiseis_pattern = re.compile(r"ασκησεις", re.UNICODE)
-askisi_pattern = re.compile(r"ασκηση \d{1,2}")
 drastiriotites_pattern = re.compile(r"δραστηριοτητες", re.UNICODE)
 erotiseis_pattern = re.compile(r"ερωτησεις", re.UNICODE)
 erotiseis_askiseis_pattern = re.compile(r"ερωτησεις[\s-]*ασκησεις[\s-]*προβληματα", re.UNICODE)
 fyllo_ergasias_pattern = re.compile(r"φυλλο\s+εργασιας(/αξιολογησης)?", re.UNICODE)
 askiseis_chapter_pattern = re.compile(r"ασκησεις\s+\w+\s+κεφαλαιου", re.UNICODE)
 erotimatologio_pattern = re.compile(r"ερωτηματολογιο", re.UNICODE)
+
 
 def remove_accents(line):
     line = line.lower()
@@ -41,6 +42,7 @@ def remove_accents(line):
         if unicodedata.category(c) != 'Mn'
     )
     return accentless_line
+
 
 def find_bibliography_line(line):
     match = False
@@ -52,14 +54,13 @@ def find_bibliography_line(line):
         match = bibliography_atend.search(concat_line)
     return match
 
+
 def find_chapter_line(line):
     match = False
     accentless_line = remove_accents(line)
     concat_line = re.sub(r'\s', '', accentless_line)
     if len(concat_line) < 40:
         match = kefalaio_pattern.search(accentless_line)
-        if not match:
-            match = kefalaio_atend_pattern.search(accentless_line)
     if len(concat_line) < 30:
         if not match:
             match = enotita_pattern.search(accentless_line)
@@ -67,10 +68,14 @@ def find_chapter_line(line):
             match = kef_pattern.search(accentless_line)
         if not match:
             match = section_number.search(accentless_line)
+    if not match:
+        match = kefalaio_atend_pattern.search(accentless_line)
     return match
+
 
 def find_index_line(line):
     return bool(dotted_pattern.search(line))
+
 
 def find_excercise_line(line):
     accentless_line = remove_accents(line)
@@ -79,8 +84,6 @@ def find_excercise_line(line):
     if len(single_spaced_line) < 35:
         if askiseis_pattern.search(single_spaced_line):
             return "askiseis"
-        if askisi_pattern.search(single_spaced_line):
-            return "askisi"
         if drastiriotites_pattern.search(single_spaced_line):
             return "drastiriotites"
         if erotiseis_askiseis_pattern.search(single_spaced_line):
@@ -95,6 +98,7 @@ def find_excercise_line(line):
             return "erotimatologio"
     
     return ""
+
 
 def process_file(lines):
     bib_ranges = []
@@ -117,13 +121,12 @@ def process_file(lines):
         # Check if we have reached the bibliography section
         if not in_bibliography_section and not in_excercise and line_number / txt_length > 0.02 and find_bibliography_line(line):
             in_bibliography_section = True
-            bib_start_line_number = line_number  # Start at "βιβλιογραφια" line
+            bib_start_line_number = line_number  # Start after "βιβλιογραφια" line
 
-        # Check if we have reached the exercise section
-        elif not in_excercise and not in_bibliography_section and find_excercise_line(line):
+        elif not in_excercise and not in_bibliography_section and find_excercise_line:
             in_excercise = True
-            excercise_start_line_number = line_number  # Start at the exercise line
-
+            excercise_start_line_number = line_number
+            
         # If we are in the bibliography section and find a new chapter, close the range
         elif in_bibliography_section and find_chapter_line(line):
             bib_end_line_number = line_number - 1  # End before the "chapter" line
@@ -131,25 +134,24 @@ def process_file(lines):
                 bib_ranges.append((bib_start_line_number, bib_end_line_number))
             in_bibliography_section = False  # Reset for the next potential bibliography section
             bib_start_line_number = None
-
-        # If we are in the exercise section and find a new chapter, close the range
-        elif in_excercise and find_chapter_line(line):
-            excercise_end_line = line_number - 1  # End before the "chapter" line
+            
+        elif in_excercise and not in_bibliography_section and find_excercise_line(line):
+            excercise_end_line = line_number - 1
             if excercise_start_line_number <= excercise_end_line:
                 excercise_ranges.append((excercise_start_line_number, excercise_end_line))
             in_excercise = False
             excercise_start_line_number = None
 
-    # Close any sections that reach the end of the file
-    if in_bibliography_section and bib_start_line_number is not None:
-        bib_end_line_number = txt_length
-        bib_ranges.append((bib_start_line_number, bib_end_line_number))
-
-    if in_excercise and excercise_start_line_number is not None:
-        excercise_end_line = txt_length
-        excercise_ranges.append((excercise_start_line_number, excercise_end_line))
+    # If we reach the end of the file and still in bibliography section, close the range
+    bib_at_end = bool(in_bibliography_section and bib_start_line_number is not None)
+    excercise_at_end = bool(in_excercise and excercise_start_line_number is not None)
+    if bib_at_end:
+        bib_ranges.append((bib_start_line_number, txt_length))
+    elif excercise_at_end:
+        excercise_ranges.append((excercise_start_line_number, txt_length))
 
     return bib_ranges, excercise_ranges, lines_to_exclude
+
 
 def main():
     # Prepare CSV output file
@@ -166,15 +168,12 @@ def main():
             'Excluded Percentage',
             'Total Bibliography Lines',
             'Bibliography Percentage',
-            'Total Exercise Lines',
-            'Exercise Percentage',
             'Total Dotted Lines',
             'Dotted Percentage',
             'Internal Bibliography',
-            'Contains Exercises',
             'Contains Dotted Lines'
         ])
-    
+
         # Process each file in the input directory
         for filename in os.listdir(input_directory):
             file_path = os.path.join(input_directory, filename)
@@ -185,53 +184,42 @@ def main():
             
             with open(file_path, 'r', encoding='utf-8') as file:
                 lines = file.readlines()
-    
+
             # Process the file
-            bib_ranges, excercise_ranges, lines_to_exclude = process_file(lines)
+            bib_ranges, lines_to_exclude = process_file(lines)
             if bib_ranges:
                 print(filename, " έχει εσωτερική βιβλιογραφία")
-            if excercise_ranges:
-                print(filename, " έχει ασκήσεις")
-    
+
             # Get sets of line numbers
             bibliography_lines_set = set()
             for start_line, end_line in bib_ranges:
                 bibliography_lines_set.update(range(start_line, end_line + 1))
-    
-            excercise_lines_set = set()
-            for start_line, end_line in excercise_ranges:
-                excercise_lines_set.update(range(start_line, end_line + 1))
-    
+
             dotted_lines_set = lines_to_exclude
-    
+
             excluded_lines_set = bibliography_lines_set.union(dotted_lines_set)
-    
+
             # Prepare output lines
             output_lines = []
             for line_number, line in enumerate(lines, 1):
-                if line_number in bibliography_lines_set or line_number in dotted_lines_set:
+                if line_number in excluded_lines_set:
                     output_lines.append("[ΕΚΤΟΣ]" + line)
-                elif line_number in excercise_lines_set:
-                    output_lines.append("[ΑΣΚ]" + line)
                 else:
                     output_lines.append(line)
             
             # Calculate counts and percentages
             total_lines = len(lines)
             total_bibliography_lines = len(bibliography_lines_set)
-            total_excercise_lines = len(excercise_lines_set)
             total_dotted_lines = len(dotted_lines_set)
             total_excluded_lines = len(excluded_lines_set)
-    
+
             bibliography_percentage = (total_bibliography_lines / total_lines) * 100 if total_lines > 0 else 0
-            excercise_percentage = (total_excercise_lines / total_lines) * 100 if total_lines > 0 else 0
             dotted_percentage = (total_dotted_lines / total_lines) * 100 if total_lines > 0 else 0
             excluded_percentage = (total_excluded_lines / total_lines) * 100 if total_lines > 0 else 0
-    
+
             internal_bib = 1 if total_bibliography_lines > 0 else 0
-            contains_excercises = 1 if total_excercise_lines > 0 else 0
             contains_dotted_lines = 1 if total_dotted_lines > 0 else 0
-    
+
             # Write data to CSV
             csvwriter.writerow([
                 filename,
@@ -239,12 +227,9 @@ def main():
                 f'{excluded_percentage:.2f}%',
                 total_bibliography_lines,
                 f'{bibliography_percentage:.2f}%',
-                total_excercise_lines,
-                f'{excercise_percentage:.2f}%',
                 total_dotted_lines,
                 f'{dotted_percentage:.2f}%',
                 internal_bib,
-                contains_excercises,
                 contains_dotted_lines
             ])
             
@@ -252,6 +237,7 @@ def main():
             output_file_path = os.path.join(output_directory, filename)
             with open(output_file_path, 'w', encoding='utf-8') as output_file:
                 output_file.writelines(output_lines)
+
 
 if __name__ == '__main__':
     main()

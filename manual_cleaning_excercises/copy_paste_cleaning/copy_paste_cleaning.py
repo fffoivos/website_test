@@ -4,7 +4,7 @@ import unicodedata
 import math
 
 # Define the directory paths
-input_directory = '/home/fivos/Desktop/paste_text_Filtered/'
+input_directory = '/home/fivos/Projects/GlossAPI/raw_txt/sxolika/paste_texts'
 # Outputs here:
 output_directory = os.path.join(input_directory, 'xondrikos_katharismos_papers')
 
@@ -103,8 +103,8 @@ def process_file(file_path):
         elif page_number_line is not None:
             intro_cutoff_point = page_number_line
     if intro_cutoff_point < 2:
-        print(os.path.basename(file_path))
-    
+        #print(os.path.basename(file_path))
+        pass
     return intro_cutoff_point, bibliography_line_number, lines
 
 def print_presentation(file_distances):
