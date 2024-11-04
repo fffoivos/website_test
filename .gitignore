@@ -1,0 +1,16 @@
+# Directories to ignore
+deleted_files_from_old_repo/
+website_test/
+raw_txt/
+glossapivenv/
+
+# Large files exceeding GitHub limits
+scraping/gutenberg/gutenberg_greek_books.csv
+
+# Common Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/

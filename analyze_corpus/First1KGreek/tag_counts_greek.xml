@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagCounts>
+  <statistics>
+    <totalGreekFiles>1123</totalGreekFiles>
+    <filesWithDivs>1123</filesWithDivs>
+  </statistics>
+  <tags>
+    <tag name="lb" count="2079538" />
+    <tag name="p" count="1068120" />
+    <tag name="note" count="630725" />
+    <tag name="pb" count="296360" />
+    <tag name="l" count="170479" />
+    <tag name="ref" count="112242" />
+    <tag name="milestone" count="111420" />
+    <tag name="del" count="42827" />
+    <tag name="quote" count="41347" />
+    <tag name="label" count="40827" />
+    <tag name="foreign" count="29281" />
+    <tag name="lg" count="27140" />
+    <tag name="add" count="27016" />
+    <tag name="bibl" count="26013" />
+    <tag name="head" count="24576" />
+    <tag name="hi" count="21371" />
+    <tag name="q" count="19204" />
+    <tag name="gap" count="12477" />
+    <tag name="sp" count="5192" />
+    <tag name="speaker" count="5184" />
+    <tag name="item" count="4291" />
+    <tag name="num" count="2771" />
+    <tag name="figure" count="1920" />
+    <tag name="graphic" count="1885" />
+    <tag name="sic" count="1489" />
+    <tag name="w" count="1454" />
+    <tag name="supplied" count="1235" />
+    <tag name="cb" count="852" />
+    <tag name="list" count="797" />
+    <tag name="seg" count="705" />
+    <tag name="ab" count="600" />
+    <tag name="cit" count="537" />
+    <tag name="title" count="328" />
+    <tag name="date" count="228" />
+    <tag name="emph" count="191" />
+    <tag name="abbr" count="159" />
+    <tag name="rdg" count="122" />
+    <tag name="fw" count="108" />
+    <tag name="expan" count="102" />
+    <tag name="ex" count="102" />
+    <tag name="space" count="66" />
+    <tag name="app" count="60" />
+    <tag name="figDesc" count="49" />
+    <tag name="corr" count="14" />
+    <tag name="pc" count="8" />
+    <tag name="choice" count="3" />
+    <tag name="author" count="2" />
+    <tag name="orig" count="2" />
+  </tags>
+</tagCounts>

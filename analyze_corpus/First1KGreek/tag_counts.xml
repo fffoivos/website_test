@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagCounts>
+  <statistics>
+    <totalFiles>1201</totalFiles>
+    <filesWithDivs>1201</filesWithDivs>
+  </statistics>
+  <tags>
+    <tag name="lb" count="2114932" />
+    <tag name="p" count="1131756" />
+    <tag name="note" count="662782" />
+    <tag name="pb" count="313062" />
+    <tag name="l" count="172438" />
+    <tag name="milestone" count="117880" />
+    <tag name="ref" count="112258" />
+    <tag name="del" count="42888" />
+    <tag name="label" count="41527" />
+    <tag name="quote" count="41475" />
+    <tag name="foreign" count="36174" />
+    <tag name="lg" count="27396" />
+    <tag name="add" count="27294" />
+    <tag name="bibl" count="26064" />
+    <tag name="head" count="25825" />
+    <tag name="hi" count="21666" />
+    <tag name="q" count="20886" />
+    <tag name="gap" count="12549" />
+    <tag name="supplied" count="5639" />
+    <tag name="sp" count="5192" />
+    <tag name="speaker" count="5184" />
+    <tag name="w" count="5147" />
+    <tag name="item" count="4305" />
+    <tag name="num" count="3182" />
+    <tag name="figure" count="1950" />
+    <tag name="graphic" count="1915" />
+    <tag name="phr" count="1635" />
+    <tag name="sic" count="1551" />
+    <tag name="corr" count="1157" />
+    <tag name="cb" count="852" />
+    <tag name="list" count="799" />
+    <tag name="ab" count="736" />
+    <tag name="seg" count="705" />
+    <tag name="cit" count="568" />
+    <tag name="title" count="390" />
+    <tag name="said" count="360" />
+    <tag name="emph" count="249" />
+    <tag name="date" count="228" />
+    <tag name="abbr" count="159" />
+    <tag name="fw" count="156" />
+    <tag name="s" count="135" />
+    <tag name="rdg" count="122" />
+    <tag name="expan" count="102" />
+    <tag name="ex" count="102" />
+    <tag name="space" count="66" />
+    <tag name="app" count="60" />
+    <tag name="m" count="57" />
+    <tag name="figDesc" count="49" />
+    <tag name="choice" count="10" />
+    <tag name="unclear" count="10" />
+    <tag name="desc" count="9" />
+    <tag name="pc" count="8" />
+    <tag name="author" count="2" />
+    <tag name="orig" count="2" />
+  </tags>
+</tagCounts>

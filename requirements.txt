@@ -1,0 +1,5 @@
+# requirements.txt
+aiohttp
+aiofiles
+argparse
+pdfminer.six

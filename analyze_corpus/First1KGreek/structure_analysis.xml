@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structuralAnalysis>
+  <statistics>
+    <filesProcessed>1123</filesProcessed>
+    <maxDivDepth>7</maxDivDepth>
+  </statistics>
+  <divHierarchy>
+    <depth level="0">
+      <divType type="apparatus:none" count="7" />
+      <divType type="commentary:none" count="10" />
+      <divType type="edition:none" count="1120" />
+      <divType type="textpart:section" count="1" />
+      <divType type="translation:none" count="7" />
+    </depth>
+    <depth level="1">
+      <divType type="textpart:book" count="1029" />
+      <divType type="textpart:castlist" count="3" />
+      <divType type="textpart:centuria" count="26" />
+      <divType type="textpart:chapter" count="11892" />
+      <divType type="textpart:choral" count="45" />
+      <divType type="textpart:commentary" count="12" />
+      <divType type="textpart:dramatispersonae" count="1" />
+      <divType type="textpart:episode" count="50" />
+      <divType type="textpart:epistle" count="458" />
+      <divType type="textpart:excerpt" count="31" />
+      <divType type="textpart:fable" count="144" />
+      <divType type="textpart:fabula" count="522" />
+      <divType type="textpart:folio" count="72" />
+      <divType type="textpart:fragment" count="6392" />
+      <divType type="textpart:haeresis" count="131" />
+      <divType type="textpart:homilia" count="59" />
+      <divType type="textpart:hypothesis" count="3" />
+      <divType type="textpart:letter" count="865" />
+      <divType type="textpart:line" count="53" />
+      <divType type="textpart:page" count="683" />
+      <divType type="textpart:paragraph" count="1802" />
+      <divType type="textpart:part" count="10" />
+      <divType type="textpart:poem" count="105" />
+      <divType type="textpart:psalm" count="25" />
+      <divType type="textpart:quaestio" count="2" />
+      <divType type="textpart:section" count="11299" />
+      <divType type="textpart:sentence" count="215" />
+      <divType type="textpart:sigla" count="1" />
+      <divType type="textpart:verse" count="72" />
+      <divType type="textpart:volume" count="11" />
+      <divType type="textpart:work" count="186" />
+    </depth>
+    <depth level="2">
+      <divType type="textpart:anapests" count="51" />
+      <divType type="textpart:antistrophe" count="160" />
+      <divType type="textpart:aphorism" count="413" />
+      <divType type="textpart:book" count="198" />
+      <divType type="textpart:chapter" count="20445" />
+      <divType type="textpart:close" count="1" />
+      <divType type="textpart:entry" count="107" />
+      <divType type="textpart:ephymnion" count="19" />
+      <divType type="textpart:epigraph" count="1" />
+      <divType type="textpart:epode" count="10" />
+      <divType type="textpart:essay" count="4" />
+      <divType type="textpart:fragment" count="303" />
+      <divType type="textpart:iambics" count="2" />
+      <divType type="textpart:index" count="1" />
+      <divType type="textpart:line" count="11717" />
+      <divType type="textpart:lines" count="92" />
+      <divType type="textpart:lyric" count="7" />
+      <divType type="textpart:page" count="506" />
+      <divType type="textpart:paragraph" count="5669" />
+      <divType type="textpart:part" count="8" />
+      <divType type="textpart:proode" count="1" />
+      <divType type="textpart:section" count="37507" />
+      <divType type="textpart:sentence" count="2059" />
+      <divType type="textpart:source" count="95" />
+      <divType type="textpart:strophe" count="159" />
+      <divType type="textpart:subsection" count="27" />
+      <divType type="textpart:trochees" count="5" />
+      <divType type="textpart:verse" count="32612" />
+    </depth>
+    <depth level="3">
+      <divType type="textpart:chapter" count="328" />
+      <divType type="textpart:comment" count="758" />
+      <divType type="textpart:fragment" count="1" />
+      <divType type="textpart:line" count="1713" />
+      <divType type="textpart:paragraph" count="3188" />
+      <divType type="textpart:part" count="16171" />
+      <divType type="textpart:section" count="87220" />
+      <divType type="textpart:subsection" count="1970" />
+      <divType type="textpart:verse" count="101" />
+    </depth>
+    <depth level="4">
+      <divType type="textpart:chapter" count="92" />
+      <divType type="textpart:fragment" count="41" />
+      <divType type="textpart:paragraph" count="2617" />
+      <divType type="textpart:part" count="8" />
+      <divType type="textpart:section" count="108" />
+    </depth>
+    <depth level="5">
+      <divType type="textpart:chapter" count="15" />
+      <divType type="textpart:section" count="123" />
+    </depth>
+    <depth level="6">
+      <divType type="textpart:chapter" count="35" />
+      <divType type="textpart:section" count="12" />
+    </depth>
+    <depth level="7">
+      <divType type="textpart:section" count="32" />
+    </depth>
+  </divHierarchy>
+  <commonPatterns>
+    <pattern structure="textpart → textpart" count="227211" />
+    <pattern structure="edition → textpart" count="35697" />
+    <pattern structure="commentary → textpart" count="3" />
+  </commonPatterns>
+  <elementDistribution>
+    <divType type="edition">
+      <element name="div" count="35697" />
+      <element name="l" count="2947" />
+      <element name="pb" count="2115" />
+      <element name="head" count="443" />
+      <element name="sp" count="342" />
+      <element name="p" count="101" />
+      <element name="note" count="98" />
+      <element name="milestone" count="76" />
+      <element name="lb" count="22" />
+      <element name="ab" count="1" />
+    </divType>
+    <divType type="textpart">
+      <element name="p" count="340959" />
+      <element name="div" count="227211" />
+      <element name="note" count="57453" />
+      <element name="lb" count="38671" />
+      <element name="l" count="18863" />
+      <element name="pb" count="18452" />
+      <element name="head" count="9997" />
+      <element name="quote" count="2543" />
+      <element name="lg" count="2044" />
+      <element name="sp" count="2023" />
+      <element name="milestone" count="1784" />
+      <element name="label" count="404" />
+      <element name="q" count="347" />
+      <element name="figure" count="345" />
+      <element name="cit" count="163" />
+      <element name="ab" count="101" />
+      <element name="gap" count="10" />
+      <element name="list" count="9" />
+      <element name="fw" count="1" />
+      <element name="bibl" count="1" />
+    </divType>
+    <divType type="commentary">
+      <element name="pb" count="3" />
+      <element name="head" count="3" />
+      <element name="div" count="3" />
+    </divType>
+  </elementDistribution>
+</structuralAnalysis>

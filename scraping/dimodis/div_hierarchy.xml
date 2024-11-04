@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<divHierarchy>
+  <statistics>
+    <totalFiles>1201</totalFiles>
+  </statistics>
+  <types>
+    <type name="commentary">
+      <subtypes>
+        <subtype name="appendix">
+          <path>./tlg0527/tlg048/tlg0527.tlg048.1st1K-eng2.xml</path>
+        </subtype>
+        <subtype name="epimetrum">
+          <path>./tlg0643/opp002/tlg0643.opp002.1st1K-lat1.xml</path>
+        </subtype>
+        <subtype name="explicatio">
+          <path>./tlg0643/tlg001/tlg0643.tlg001.1st1K-lat1.xml</path>
+        </subtype>
+        <subtype name="index">
+          <path>./tlg0527/tlg048/tlg0527.tlg048.1st1K-mul1.xml</path>
+        </subtype>
+        <subtype name="notes">
+          <path>./tlg0527/tlg048/tlg0527.tlg048.1st1K-eng1.xml</path>
+        </subtype>
+        <subtype name="preface">
+          <path>./tlg0643/opp001/tlg0643.opp001.1st1K-lat1.xml</path>
+        </subtype>
+      </subtypes>
+    </type>
+    <type name="textpart">
+      <subtypes>
+        <subtype name="anapests">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="antistrophe">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="aphorism">
+          <path>./tlg0627/tlg012/tlg0627.tlg012.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="book">
+          <path>./tlg1551/tlg001/tlg1551.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="castlist">
+          <path>./tlg0085/tlg003/tlg0085.tlg003.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="centuria">
+          <path>./tlg9006/tlg001/tlg9006.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="chapter">
+          <path>./tlg0090/tlg001/tlg0090.tlg001.opp-lat4.xml</path>
+        </subtype>
+        <subtype name="choral">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="close">
+          <path>./tlg0085/tlg005/tlg0085.tlg005.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="comment">
+          <path>./tlg4102/tlg011/tlg4102.tlg011.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="commentary">
+          <path>./tlg4090/tlg001/tlg4090.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="dramatispersonae">
+          <path>./tlg0085/tlg005/tlg0085.tlg005.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="entry">
+          <path>./tlg1416/tlg007/tlg1416.tlg007.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="ephymnion">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="epigraph">
+          <path>./tlg5026/tlg007/tlg5026.tlg007.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="episode">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="epistle">
+          <path>./tlg1325/tlg001/tlg1325.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="epode">
+          <path>./tlg0085/tlg003/tlg0085.tlg003.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="essay">
+          <path>./tlg0732/tlg012/tlg0732.tlg012.1st1K-grc2.xml</path>
+        </subtype>
+        <subtype name="excerpt">
+          <path>./tlg1286/tlg020/tlg1286.tlg020.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="fable">
+          <path>./tlg0096/tlg002/tlg0096.tlg002.opp-grc3.xml</path>
+        </subtype>
+        <subtype name="fabula">
+          <path>./tlg0096/tlg002/tlg0096.tlg002.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="folio">
+          <path>./tlg4016/tlg005/tlg4016.tlg005.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="fragment">
+          <path>./tlg1664/tlg001/tlg1664.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="haeresis">
+          <path>./tlg2021/tlg003/tlg2021.tlg003.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="heading">
+          <path>./tlg0527/tlg048/tlg0527.tlg048.opp-eng2.xml</path>
+        </subtype>
+        <subtype name="homilia">
+          <path>./tlg2042/tlg009/tlg2042.tlg009.opp-grc1.xml</path>
+        </subtype>
+        <subtype name="hypothesis">
+          <path>./tlg0085/tlg007/tlg0085.tlg007.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="iambics">
+          <path>./tlg0085/tlg002/tlg0085.tlg002.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="index">
+          <path>./tlg4003/tlg002/tlg4003.tlg002.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="letter">
+          <path>./tlg2018/tlg008/tlg2018.tlg008.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="line">
+          <path>./tlg5019/tlg002/tlg5019.tlg002.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="lines">
+          <path>./tlg2042/tlg086/tlg2042.tlg086.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="lyric">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="page">
+          <path>./tlg1669/tlg004/tlg1669.tlg004.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="paragraph">
+          <path>./tlg0066/tlg001/tlg0066.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="part">
+          <path>./tlg0086/tlg047/tlg0086.tlg047.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="poem">
+          <path>./tlg0533/tlg007/tlg0533.tlg007.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="proode">
+          <path>./tlg0085/tlg002/tlg0085.tlg002.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="psalm">
+          <path>./tlg2042/tlg044/tlg2042.tlg044.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="quaestio">
+          <path>./tlg0732/tlg012/tlg0732.tlg012.1st1K-grc2.xml</path>
+        </subtype>
+        <subtype name="section">
+          <path>./tlg0090/tlg001/tlg0090.tlg001.opp-lat4.xml</path>
+        </subtype>
+        <subtype name="sentence">
+          <path>./tlg0575/tlg001/tlg0575.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="sigla">
+          <path>./tlg0643/tlg001/tlg0643.tlg001.1st1K-grc2.xml</path>
+        </subtype>
+        <subtype name="source">
+          <path>./tlg2018/tlg011/tlg2018.tlg011.1st1K-lat1.xml</path>
+        </subtype>
+        <subtype name="strophe">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="subsection">
+          <path>./tlg0563/tlg001/tlg0563.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="trochees">
+          <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="verse">
+          <path>./tlg0527/tlg057/tlg0527.tlg057.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="volume">
+          <path>./tlg5026/tlg001/tlg5026.tlg001.1st1K-grc1.xml</path>
+        </subtype>
+        <subtype name="work">
+          <path>./tlg1126/tlg003/tlg1126.tlg003.1st1K-grc1.xml</path>
+        </subtype>
+      </subtypes>
+    </type>
+  </types>
+</divHierarchy>
