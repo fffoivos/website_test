@@ -98,5 +98,9 @@ def analyze_div_types(root_dir):
     print(xml_str)
 
 # Replace this with the actual path to your root directory
+<<<<<<< Updated upstream
 root_directory = "/home/fivos/Desktop/First1KGreek_fork/data"
+=======
+root_directory = "/home/fivos/Desktop/canonical-greekLit/data/"
+>>>>>>> Stashed changes
 analyze_div_types(root_directory)
