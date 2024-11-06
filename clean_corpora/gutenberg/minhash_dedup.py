@@ -118,7 +118,7 @@ class ProcessingLogger:
             
         self.log(summary)
 
-def organize_text_files(input_path: str, similarity_threshold: float = 0.5):
+def organize_text_files(input_path: str, similarity_threshold: float = 0.95):
     """
     Organize text files by similarity, with detailed progress reporting
     """
@@ -239,6 +239,6 @@ def organize_text_files(input_path: str, similarity_threshold: float = 0.5):
         raise
 
 if __name__ == "__main__":
-    path = "/media/fivos/247968ad-2d9f-4d34-839a-ebc33dff1531/text_sources/gutenberg/"
+    path = "/home/fivos/Desktop/text_sources/gutenberg/guten_raw_books"
     
     organize_text_files(path)
