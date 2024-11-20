@@ -82,9 +82,9 @@ def analyze_div_types(root_dir):
     ET.indent(root_elem, space=" ")
     xml_str = ET.tostring(root_elem, encoding='unicode')
     
-    # Get the directory where the script is located
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_path = os.path.join(script_dir, 'div_hierarchy.xml')
+    # Get the parent directory of the root_dir (one level above 'data')
+    output_dir = os.path.dirname(root_dir)
+    output_path = os.path.join(output_dir, 'div_hierarchy.xml')
     
     # Write to XML file
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -98,9 +98,5 @@ def analyze_div_types(root_dir):
     print(xml_str)
 
 # Replace this with the actual path to your root directory
-<<<<<<< Updated upstream
-root_directory = "/home/fivos/Desktop/First1KGreek_fork/data"
-=======
-root_directory = "/home/fivos/Desktop/canonical-greekLit/data/"
->>>>>>> Stashed changes
+root_directory = "/home/fivos/Desktop/canonical-greekLit/data"
 analyze_div_types(root_directory)

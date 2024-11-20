@@ -1,228 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divHierarchy>
  <statistics>
-  <totalFiles>1123</totalFiles>
+  <totalFiles>815</totalFiles>
  </statistics>
  <types>
-  <type name="commentary">
-   <subtypes>
-    <subtype name="addenda">
-     <path>./tlg4027/tlg001/tlg4027.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="ancient">
-     <path>./tlg3129/ogl001/tlg3129.ogl001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="auctores">
-     <path>./tlg4102/tlg013/tlg4102.tlg013.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="conspectus">
-     <path>./tlg4015/tlg005/tlg4015.tlg005.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="corrigenda">
-     <path>./tlg2371/tlg001/tlg2371.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="ii_loci">
-     <path>./tlg4016/tlg001/tlg4016.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="iii_loci">
-     <path>./tlg4015/tlg005/tlg4015.tlg005.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="index">
-     <path>./tlg4027/tlg001/tlg4027.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="index.2">
-     <path>./tlg4015/tlg005/tlg4015.tlg005.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="iv_loci">
-     <path>./tlg4015/tlg005/tlg4015.tlg005.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="loci">
-     <path>./tlg4016/tlg003/tlg4016.tlg003.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="preface">
-     <path>./tlg4027/tlg001/tlg4027.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="toc">
-     <path>./tlg2733/tlg001/tlg2733.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-   </subtypes>
-  </type>
-  <type name="edition">
-   <subtypes>
-    <subtype name="work">
-     <path>./tlg4102/tlg003/tlg4102.tlg003.1st1K-grc1.xml</path>
-    </subtype>
-   </subtypes>
-  </type>
   <type name="textpart">
    <subtypes>
-    <subtype name="2">
-     <path>./tlg5023/tlg001/tlg5023.tlg001.1st1K-grc1.xml</path>
+    <subtype name="Agon">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="3">
-     <path>./tlg5023/tlg001/tlg5023.tlg001.1st1K-grc1.xml</path>
+    <subtype name="Antepirrheme">
+     <path>./tlg0019/tlg009/tlg0019.tlg009.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Antikatakeleusmos">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Antipnigos">
+     <path>./tlg0019/tlg009/tlg0019.tlg009.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Book">
+     <path>./tlg0012/tlg001/tlg0012.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Cast_List">
+     <path>./tlg0019/tlg009/tlg0019.tlg009.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Choral">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Epirrheme">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Episode">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Exodus">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Jebb_page">
+     <path>./tlg0284/tlg013/tlg0284.tlg013.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Katakeleusmos">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Letter">
+     <path>./tlg0010/tlg028/tlg0010.tlg028.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Lyric-Scene">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Parabasis">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Parodos">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Pnigos">
+     <path>./tlg0019/tlg009/tlg0019.tlg009.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="Prologue">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
     </subtype>
     <subtype name="anapests">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antepirrhema">
+     <path>./tlg0019/tlg001/tlg0019.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antepirrheme">
+     <path>./tlg0019/tlg007/tlg0019.tlg007.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antikatakeleusmenos">
+     <path>./tlg0019/tlg007/tlg0019.tlg007.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antikatakeleusmos">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antipnigos">
+     <path>./tlg0019/tlg007/tlg0019.tlg007.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antiprelude">
+     <path>./tlg0019/tlg007/tlg0019.tlg007.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="antiproepirrheme">
+     <path>./tlg0019/tlg004/tlg0019.tlg004.perseus-grc2.xml</path>
     </subtype>
     <subtype name="antistrophe">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="aphorism">
-     <path>./tlg0627/tlg012/tlg0627.tlg012.1st1K-grc1.xml</path>
+     <path>./tlg0627/tlg012/tlg0627.tlg012.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="bekker_page">
+     <path>./tlg0086/tlg035/tlg0086.tlg035.perseus-grc2.xml</path>
     </subtype>
     <subtype name="book">
-     <path>./tlg1551/tlg001/tlg1551.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="castlist">
-     <path>./tlg0085/tlg003/tlg0085.tlg003.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="centuria">
-     <path>./tlg9006/tlg001/tlg9006.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0561/tlg001/tlg0561.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="chapter">
-     <path>./tlg0090/tlg001/tlg0090.tlg001.opp-grc9.xml</path>
-    </subtype>
-    <subtype name="chapters">
-     <path>./tlg0656/tlg001/tlg0656.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0090/tlg001/tlg0090.tlg001.opp-grc1.xml</path>
     </subtype>
     <subtype name="choral">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="close">
-     <path>./tlg0085/tlg005/tlg0085.tlg005.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg005/tlg0085.tlg005.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="comment">
-     <path>./tlg4102/tlg011/tlg4102.tlg011.1st1K-grc1.xml</path>
+    <subtype name="dactyls">
+     <path>./tlg0019/tlg009/tlg0019.tlg009.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="commentary">
-     <path>./tlg4090/tlg001/tlg4090.tlg001.1st1K-grc1.xml</path>
+    <subtype name="dialogue">
+     <path>./tlg0011/tlg001/tlg0011.tlg001.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="dramatispersonae">
-     <path>./tlg0085/tlg005/tlg0085.tlg005.1st1K-grc1.xml</path>
+    <subtype name="elegiacs">
+     <path>./tlg0019/tlg005/tlg0019.tlg005.perseus-grc2.xml</path>
     </subtype>
     <subtype name="entry">
-     <path>./tlg1416/tlg007/tlg1416.tlg007.1st1K-grc1.xml</path>
+     <path>./tlg1389/tlg001/tlg1389.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="ephymn">
-     <path>./tlg0085/tlg007/tlg0085.tlg007.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg007/tlg0085.tlg007.perseus-grc2.xml</path>
     </subtype>
     <subtype name="ephymn.">
-     <path>./tlg0085/tlg005/tlg0085.tlg005.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg005/tlg0085.tlg005.perseus-grc2.xml</path>
     </subtype>
     <subtype name="ephymnion">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="epigraph">
-     <path>./tlg5026/tlg007/tlg5026.tlg007.1st1K-grc1.xml</path>
+    <subtype name="epigram">
+     <path>./tlg0533/tlg003/tlg0533.tlg003.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="epirrhema">
+     <path>./tlg0019/tlg001/tlg0019.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="epirrheme">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
     </subtype>
     <subtype name="episode">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="epistle">
-     <path>./tlg1325/tlg001/tlg1325.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="epode">
-     <path>./tlg0085/tlg003/tlg0085.tlg003.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg003/tlg0085.tlg003.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="essay">
-     <path>./tlg0732/tlg012/tlg0732.tlg012.1st1K-grc2.xml</path>
-    </subtype>
-    <subtype name="excerpt">
-     <path>./tlg1286/tlg020/tlg1286.tlg020.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="fable">
-     <path>./tlg0096/tlg002/tlg0096.tlg002.opp-grc3.xml</path>
-    </subtype>
-    <subtype name="fabula">
-     <path>./tlg0096/tlg002/tlg0096.tlg002.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="folio">
-     <path>./tlg4016/tlg005/tlg4016.tlg005.1st1K-grc1.xml</path>
+    <subtype name="exordium">
+     <path>./tlg0014/tlg062/tlg0014.tlg062.perseus-grc2.xml</path>
     </subtype>
     <subtype name="fragment">
-     <path>./tlg1664/tlg001/tlg1664.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0551/tlg010/tlg0551.tlg010.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="haeresis">
-     <path>./tlg2021/tlg003/tlg2021.tlg003.1st1K-grc1.xml</path>
+    <subtype name="hexameter">
+     <path>./tlg0011/tlg006/tlg0011.tlg006.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="homilia">
-     <path>./tlg2042/tlg009/tlg2042.tlg009.opp-grc1.xml</path>
-    </subtype>
-    <subtype name="hypothesis">
-     <path>./tlg0085/tlg007/tlg0085.tlg007.1st1K-grc1.xml</path>
+    <subtype name="iambic">
+     <path>./tlg0006/tlg013/tlg0006.tlg013.perseus-grc2.xml</path>
     </subtype>
     <subtype name="iambics">
-     <path>./tlg0085/tlg002/tlg0085.tlg002.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg002/tlg0085.tlg002.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="index">
-     <path>./tlg4003/tlg002/tlg4003.tlg002.1st1K-grc1.xml</path>
+    <subtype name="katakeleusmenos">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="katakeleusmos">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="kommos">
+     <path>./tlg0011/tlg003/tlg0011.tlg003.perseus-grc2.xml</path>
     </subtype>
     <subtype name="letter">
-     <path>./tlg2018/tlg008/tlg2018.tlg008.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="line">
-     <path>./tlg5019/tlg002/tlg5019.tlg002.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="lines">
-     <path>./tlg2042/tlg086/tlg2042.tlg086.1st1K-grc1.xml</path>
+     <path>./tlg0059/tlg036/tlg0059.tlg036.perseus-grc2.xml</path>
     </subtype>
     <subtype name="lyric">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="mesode">
+     <path>./tlg0006/tlg001/tlg0006.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="monody">
+     <path>./tlg0019/tlg003/tlg0019.tlg003.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="number">
+     <path>./tlg1799/tlg001/tlg1799.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="oath">
+     <path>./tlg0627/tlg013/tlg0627.tlg013.perseus-grc2.xml</path>
     </subtype>
     <subtype name="page">
-     <path>./tlg1669/tlg004/tlg1669.tlg004.1st1K-grc1.xml</path>
+     <path>./tlg0638/tlg004/tlg0638.tlg004.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="parabasis">
+     <path>./tlg0019/tlg001/tlg0019.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="paragraph">
-     <path>./tlg0066/tlg001/tlg0066.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0555/tlg008/tlg0555.tlg008.perseus-grc2.xml</path>
     </subtype>
     <subtype name="part">
-     <path>./tlg0086/tlg047/tlg0086.tlg047.1st1K-grc1.xml</path>
+     <path>./tlg0627/tlg006/tlg0627.tlg006.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="pnigos">
+     <path>./tlg0019/tlg010/tlg0019.tlg010.perseus-grc2.xml</path>
     </subtype>
     <subtype name="poem">
-     <path>./tlg0533/tlg007/tlg0533.tlg007.1st1K-grc1.xml</path>
+     <path>./tlg0036/tlg003/tlg0036.tlg003.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="proode">
-     <path>./tlg0085/tlg002/tlg0085.tlg002.1st1K-grc1.xml</path>
+    <subtype name="prelude">
+     <path>./tlg0019/tlg001/tlg0019.tlg001.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="psalm">
-     <path>./tlg2042/tlg044/tlg2042.tlg044.1st1K-grc1.xml</path>
+    <subtype name="proagon">
+     <path>./tlg0019/tlg003/tlg0019.tlg003.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="quaestio">
-     <path>./tlg0732/tlg012/tlg0732.tlg012.1st1K-grc2.xml</path>
+    <subtype name="proepirrheme">
+     <path>./tlg0019/tlg004/tlg0019.tlg004.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="prologue">
+     <path>./tlg0019/tlg008/tlg0019.tlg008.perseus-grc2.xml</path>
     </subtype>
     <subtype name="section">
-     <path>./tlg0090/tlg001/tlg0090.tlg001.opp-grc9.xml</path>
+     <path>./tlg0090/tlg001/tlg0090.tlg001.opp-grc1.xml</path>
     </subtype>
     <subtype name="sentence">
-     <path>./tlg0575/tlg001/tlg0575.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0557/tlg005/tlg0557.tlg005.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="sigla">
-     <path>./tlg0643/tlg001/tlg0643.tlg001.1st1K-grc2.xml</path>
+    <subtype name="speech">
+     <path>./tlg0612/tlg001/tlg0612.tlg001.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="source">
-     <path>./tlg2018/tlg011/tlg2018.tlg011.1st1K-grc1.xml</path>
+    <subtype name="sphragis">
+     <path>./tlg0019/tlg002/tlg0019.tlg002.perseus-grc2.xml</path>
     </subtype>
     <subtype name="strophe">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="subchapter">
+     <path>./tlg0086/tlg034/tlg0086.tlg034.perseus-grc2.xml</path>
     </subtype>
     <subtype name="subsection">
-     <path>./tlg0563/tlg001/tlg0563.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0086/tlg003/tlg0086.tlg003.perseus-grc2.xml</path>
     </subtype>
-    <subtype name="textpart">
-     <path>./tlg0061/tlg004/tlg0061.tlg004.1st1K-grc1.xml</path>
+    <subtype name="tetralogy">
+     <path>./tlg0028/tlg003/tlg0028.tlg003.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="tetrameters">
+     <path>./tlg0019/tlg007/tlg0019.tlg007.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="trochaic">
+     <path>./tlg0011/tlg006/tlg0011.tlg006.perseus-grc2.xml</path>
     </subtype>
     <subtype name="trochees">
-     <path>./tlg0085/tlg001/tlg0085.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0085/tlg001/tlg0085.tlg001.perseus-grc2.xml</path>
+    </subtype>
+    <subtype name="type">
+     <path>./tlg1799/tlg001/tlg1799.tlg001.perseus-grc2.xml</path>
     </subtype>
     <subtype name="verse">
-     <path>./tlg0527/tlg057/tlg0527.tlg057.1st1K-grc1.xml</path>
-    </subtype>
-    <subtype name="volume">
-     <path>./tlg5026/tlg001/tlg5026.tlg001.1st1K-grc1.xml</path>
+     <path>./tlg0031/tlg013/tlg0031.tlg013.perseus-grc2.xml</path>
     </subtype>
     <subtype name="work">
-     <path>./tlg1126/tlg003/tlg1126.tlg003.1st1K-grc1.xml</path>
+     <path>./tlg4036/tlg023/tlg4036.tlg023.cypria-grc1.xml</path>
     </subtype>
    </subtypes>
   </type>

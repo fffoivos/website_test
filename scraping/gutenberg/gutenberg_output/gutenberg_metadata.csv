@@ -1,0 +1,382 @@
+﻿index,author,etos_author,translator,etos_translator,title,text_filename
+1,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Αγαμέμνων,book_1_Aeschylus.txt
+2,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Επτά επί Θήβας,book_2_Aeschylus.txt
+3,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Ευμενίδες,book_3_Aeschylus.txt
+4,Aeschylus,526 BCE-457 BCE,"Zervos, I. (Ioannes)",1875-1944,Πέρσαι,book_4_Aeschylus.txt
+5,Aeschylus,526 BCE-457 BCE,"Zervos, I. (Ioannes)",1875-1944,Προμηθεύς Δεσμώτης,book_5_Aeschylus.txt
+6,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Χοηφόροι,book_6_Aeschylus.txt
+7,"Ainian, Demetrios",1800-1881,,,Η Βιογραφία του στρατηγού Γεωργίου Καραϊσκάκη,book_7_Ainian_Demetrios.txt
+8,"Deledda, Grazia",1871-1936,"Alexandridis, Christos",,Καλαμιές στον άνεμο,book_8_Deledda_Grazia.txt
+9,Xenophon,432 BCE-351,"Anastasopoulos, Demetrios",1873,Κύρου Ανάβασις Τόμος 1,book_9_Xenophon.txt
+10,Xenophon,432 BCE-351,"Anastasopoulos, Demetrios",1873,Κύρου Ανάβασις Τόμος 2,book_10_Xenophon.txt
+11,"Andersen, H. C. (Hans Christian)",1805-1875,"Chatziarapi, Anastasia",,Η νεράιδα του Πάγου,book_11_Andersen_H_C_Hans_Christian.txt
+12,"Andersen, H. C. (Hans Christian)",1805-1875,"Vikelas, Demetrios",1835-1908,"Παραμύθια Δανικά, εκ των του Ανδερσεν",book_12_Andersen_H_C_Hans_Christian.txt
+13,"Andreadis, Andreas",1876-1935,,,"Ιστορία των Εθνικών Δανείων
+Μέρος Α' - Τα δάνεια της ανεξαρτησίας (1824-1825) - Το Δημόσιον Χρέος επί της Βαυαρικής Δυναστείας",book_13_Andreadis_Andreas.txt
+14,"Anninos, Bampes",1852-1934,,,Αττικαί ημέραι,book_14_Anninos_Bampes.txt
+15,"Goethe, Johann Wolfgang von",1749-1832,"Aretas, Ioannis",,Βέρθερος,book_15_Goethe_Johann_Wolfgang_von.txt
+16,"Cottin, Madame (Sophie)",1770-1807,"Argyropoulos, K. P.",,Μαλβίνα: Ρωμαντικό Μυθιστόρημα του 18ου αιώνος,book_16_Cottin_Madame_Sophie.txt
+17,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Βάτραχοι,book_17_Aristophanes.txt
+18,Aristophanes,447? BCE,,,Εκκλησιάζουσαι,book_18_Aristophanes.txt
+19,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Λυσιστράτη,book_19_Aristophanes.txt
+20,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Νεφέλαι,book_20_Aristophanes.txt
+21,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Όρνιθες,book_21_Aristophanes.txt
+22,Aristotle,385 BCE-323 BCE,"Zervos, I. (Ioannes)",1875-1944,Αθηναίων Πολιτεία,book_22_Aristotle.txt
+23,Aristotle,385 BCE-323 BCE,"Zambas, Kyriakos",1866,"Ηθικά Νικομάχεια, Τόμος Δεύτερος",book_23_Aristotle.txt
+24,Aristotle,385 BCE-323 BCE,"Zambas, Kyriakos",1866,"Ηθικά Νικομάχεια, Τόμος Πρώτος",book_24_Aristotle.txt
+25,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,"Μικρά Φυσικά, Τόμος Δεύτερος",book_25_Aristotle.txt
+26,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,"Μικρά Φυσικά, Τόμος Πρώτος",book_26_Aristotle.txt
+27,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,Περί Ψυχής,book_27_Aristotle.txt
+28,"Athanasius, Saint, Patriarch of Alexandria, -",373,,,"Declaration of Faith, in Latin and the Original Greek",book_28_Athanasius_Saint_Patriarch_of_Alexandria.txt
+29,"Athanasius, Saint, Patriarch of Alexandria, -",373,,,"In Illud: Omnia mihi tradita sunt a Patre
+A Homily on Matthew 11:27, In Latin and the Original Greek",book_29_Athanasius_Saint_Patriarch_of_Alexandria.txt
+30,"Athanasius, Saint, Patriarch of Alexandria, -",373,,,"Declaration of Faith, in Latin and the Original Greek",book_30_Athanasius_Saint_Patriarch_of_Alexandria.txt
+31,"Athanasius, Saint, Patriarch of Alexandria, -",373,,,"In Illud: Omnia mihi tradita sunt a Patre
+A Homily on Matthew 11:27, In Latin and the Original Greek",book_31_Athanasius_Saint_Patriarch_of_Alexandria.txt
+32,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_32_Augustus_Emperor_of_Rome.txt
+33,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_33_Augustus_Emperor_of_Rome.txt
+34,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_34_Augustus_Emperor_of_Rome.txt
+35,"Axiotes, Pan. (Panagiotes)",1840-1918,,,"Διηγήματα, Νέα Σειρά",book_35_Axiotes_Pan_Panagiotes.txt
+36,"Bédier, Joseph",1864-1938,"Ventiris, Nikolaos",,Το μυθιστόρημα του Τριστάνου και της Ιζόλδης,book_36_B_dier_Joseph.txt
+37,"Brugman, Karl",1849-1919,"Palles, Alexandros",1851-1935,Γραφτή και Δημοτική και το Γλωσσικό Ζήτημα στην Ελλάδα,book_37_Brugman_Karl.txt
+38,"Andersen, H. C. (Hans Christian)",1805-1875,"Chatziarapi, Anastasia",,Η νεράιδα του Πάγου,book_38_Andersen_H_C_Hans_Christian.txt
+39,"Chatzopoulos, D.",1872-1936,,,Ντόπιες Ζωγραφιές,book_39_Chatzopoulos_D.txt
+40,"Chatzopoulos, Kostantinos",1868-1920,,,Απλοί Τρόποι,book_40_Chatzopoulos_Kostantinos.txt
+41,"Goethe, Johann Wolfgang von",1749-1832,"Chatzopoulos, Kostantinos",1868-1920,Ιφιγένεια εν Ταύροις: Δράμα σε πράξεις πέντε,book_41_Goethe_Johann_Wolfgang_von.txt
+42,"Geijerstam, Gustaf af",1858-1909,"Chatzopoulos, Kostantinos",1868-1920,"Το βιβλίο του μικρού αδερφού
+Μυθιστόρημα ενός Γάμου",book_42_Geijerstam_Gustaf_af.txt
+43,"Chatzopoulos, Kostantinos",1868-1920,,,Υπεράνθρωπος: Διήγημα,book_43_Chatzopoulos_Kostantinos.txt
+44,"Chatzopoulos, Kostantinos",1868-1920,,,Φθινόπωρο,book_44_Chatzopoulos_Kostantinos.txt
+45,Sophocles,496? BCE,"Chrestomanos, Konstantinos",1867-1911,Αντιγόνη,book_45_Sophocles.txt
+46,"Chrestomanos, Konstantinos",1867-1911,,,Η Κερένια κούκλα: Αθηναϊκό μυθιστόρημα,book_46_Chrestomanos_Konstantinos.txt
+47,Homer,751? BCE,"Christopoulos, Athanasios",1771-1847,Ιλιάδος Ραψωδία Α: Μεταφρασθείσα εις δημοτικούς στίχους,book_47_Homer.txt
+48,"Christovasilis, Christos",1862,,,Η αγάπη (Τριλογία),book_48_Christovasilis_Christos.txt
+49,"Christovasilis, Christos",1862,,,Διηγήματα της ξενιτειάς,book_49_Christovasilis_Christos.txt
+50,"Cottin, Madame (Sophie)",1770-1807,"Argyropoulos, K. P.",,Μαλβίνα: Ρωμαντικό Μυθιστόρημα του 18ου αιώνος,book_50_Cottin_Madame_Sophie.txt
+51,"Shakespeare, William",1564-1616,"Damiralis, Michael",1892-1941,"Αντώνιος και Κλεοπάτρα
+Τραγωδία εις πράξεις 5",book_51_Shakespeare_William.txt
+52,"Deledda, Grazia",1871-1936,"Alexandridis, Christos",,Καλαμιές στον άνεμο,book_52_Deledda_Grazia.txt
+53,"Delta, Penelope Stephanou",1874-1941,,,Παραμύθι χωρίς όνομα,book_53_Delta_Penelope_Stephanou.txt
+54,"Demetrakopoulos, Polyvios",1864-1922,,,Αι δύο διαθήκαι,book_54_Demetrakopoulos_Polyvios.txt
+55,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Βάτραχοι,book_55_Aristophanes.txt
+56,Euripides,481? BCE,"Demetrakopoulos, Polyvios",1864-1922,Ίων,book_56_Euripides.txt
+57,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Λυσιστράτη,book_57_Aristophanes.txt
+58,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Νεφέλαι,book_58_Aristophanes.txt
+59,Aristophanes,447? BCE,"Demetrakopoulos, Polyvios",1864-1922,Όρνιθες,book_59_Aristophanes.txt
+60,"Sangharakshita, Bhikshu",1925,"Doikas, Spiros",,Όραμα και Μεταμόρφωση : Μια εισαγωγή στο Ευγενές Οκταπλό Μονοπάτι του Βούδδα,book_60_Sangharakshita_Bhikshu.txt
+61,"Dragoumes, Ion",1878-1920,,,Μελέται: 10 άρθρα του στον «Νουμά»,book_61_Dragoumes_Ion.txt
+62,"Tolstoy, Leo, graf",1828-1910,"Economopoulos, Elias",1868-1929,Άννα Καρένιν,book_62_Tolstoy_Leo_graf.txt
+63,"Prévost, Marcel",1862-1941,"Economopoulos, Elias",1868-1929,Η Μάγισσα,book_63_Pr_vost_Marcel.txt
+64,"Eftaliotis, Argyris",1849-1923,,,"Ιστορία της Ρωμιοσύνης, Πρώτος τόμος",book_64_Eftaliotis_Argyris.txt
+65,"Eftaliotis, Argyris",1849-1923,,,"Η μαζώχτρα κι άλλες ιστορίες
+Ο Βουρκόλακας - Δράμα",book_65_Eftaliotis_Argyris.txt
+66,"Eftaliotis, Argyris",1849-1923,,,Φυλλάδες του Γεροδήμου,book_66_Eftaliotis_Argyris.txt
+67,"Euangelides, Tryphon E.",1863-1941,,,Ιστορία του Ιωάννου Καποδιστρίου Κυβερνήτου της Ελλάδος,book_67_Euangelides_Tryphon_E.txt
+68,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Άλκηστις,book_68_Euripides.txt
+69,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Ανδρομάχη,book_69_Euripides.txt
+70,Euripides,481? BCE,"Tanagras, Angelos",1877-1964,Ηλέκτρα,book_70_Euripides.txt
+71,Euripides,481? BCE,"Fragkias, Ioannis",,Ιφιγένεια εν Αυλίδι,book_71_Euripides.txt
+72,Euripides,481? BCE,"Demetrakopoulos, Polyvios",1864-1922,Ίων,book_72_Euripides.txt
+73,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Κύκλωψ,book_73_Euripides.txt
+74,Euripides,481? BCE,"Voutierides, El. P. (Elias P.)",1874-1941,Ορέστης,book_74_Euripides.txt
+75,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_75_Augustus_Emperor_of_Rome.txt
+76,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_76_Augustus_Emperor_of_Rome.txt
+77,"Augustus, Emperor of Rome",64 BCE-14,,,Monumentum Ancyranum: The Deeds of Augustus,book_77_Augustus_Emperor_of_Rome.txt
+78,"Faltaits, Kostas",1891-1944,,,Αργία : διήγημα,book_78_Faltaits_Kostas.txt
+79,"Farrar, F. W. (Frederic William)",1831-1903,"Papadiamantes, Alexandros",1851-1911,Ο Βίος του Χριστού,book_79_Farrar_F_W_Frederic_William.txt
+80,"Flaubert, Gustave",1821-1880,"Simiriotis, S.",,Ηρωδιάς,book_80_Flaubert_Gustave.txt
+81,Euripides,481? BCE,"Fragkias, Ioannis",,Ιφιγένεια εν Αυλίδι,book_81_Euripides.txt
+82,"Geijerstam, Gustaf af",1858-1909,"Chatzopoulos, Kostantinos",1868-1920,"Το βιβλίο του μικρού αδερφού
+Μυθιστόρημα ενός Γάμου",book_82_Geijerstam_Gustaf_af.txt
+83,"Goethe, Johann Wolfgang von",1749-1832,"Aretas, Ioannis",,Βέρθερος,book_83_Goethe_Johann_Wolfgang_von.txt
+84,"Goethe, Johann Wolfgang von",1749-1832,"Chatzopoulos, Kostantinos",1868-1920,Ιφιγένεια εν Ταύροις: Δράμα σε πράξεις πέντε,book_84_Goethe_Johann_Wolfgang_von.txt
+85,"Sukhovo-Kobylin, A. (Aleksandr)",1817-1903,"Konstantinidis, Agathoklis",1854-1920,"Ο Γάμος του Κρεντσίνσκη, Κωμωδία εις τρεις πράξεις - Πανδρολογήματα, Κωμωδία εις δύο πράξεις",book_85_Sukhovo_Kobylin_A_Aleksandr.txt
+86,"Golfis, Rigas",1886-1958,,,"Ο Γήταυρος
+Δράμα",book_86_Golfis_Rigas.txt
+87,Plato,428? BCE,"Gounaris, K.",,Φαίδρος,book_87_Plato.txt
+88,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,"Μικρά Φυσικά, Τόμος Δεύτερος",book_88_Aristotle.txt
+89,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,"Μικρά Φυσικά, Τόμος Πρώτος",book_89_Aristotle.txt
+90,Aristotle,385 BCE-323 BCE,"Gratsiatos, Paulos",,Περί Ψυχής,book_90_Aristotle.txt
+91,Plato,428? BCE,"Gratsiatos, Paulos",,"Τίμαιος, Τόμος Α",book_91_Plato.txt
+92,Plato,428? BCE,"Gratsiatos, Paulos",,"Τίμαιος, Τόμος Β",book_92_Plato.txt
+93,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_93_Greenfield_William.txt
+94,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_94_Greenfield_William.txt
+95,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_95_Greenfield_William.txt
+96,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_96_Greenfield_William.txt
+97,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Αγαμέμνων,book_97_Aeschylus.txt
+98,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Επτά επί Θήβας,book_98_Aeschylus.txt
+99,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Ευθύδημος,book_99_Plato.txt
+100,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Ευμενίδες,book_100_Aeschylus.txt
+101,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 1",book_101_Plato.txt
+102,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 2",book_102_Plato.txt
+103,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 3",book_103_Plato.txt
+104,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 4",book_104_Plato.txt
+105,Aeschylus,526 BCE-457 BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Χοηφόροι,book_105_Aeschylus.txt
+106,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Ευθύδημος,book_106_Plato.txt
+107,Plato,428? BCE,"Harokopos, Aristeidis",1851,"Κριτίας, Ίππαρχος, Αντερασταί",book_107_Plato.txt
+108,Plato,428? BCE,"Harokopos, Aristeidis",1851,Πρωταγόρας,book_108_Plato.txt
+109,Plato,428? BCE,"Harokopos, Aristeidis",1851,Φαίδων,book_109_Plato.txt
+110,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_110_Greenfield_William.txt
+111,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_111_Greenfield_William.txt
+112,"Wilde, Oscar",1854-1900,"Hatzigavriil, M.",,Ιδανικός σύζυγος: Δράμα εις τέσσαρας πράξεις,book_112_Wilde_Oscar.txt
+113,Herodotus,481? BCE,,,"Ιστορίαι Ηροδότου, Τόμος 1",book_113_Herodotus.txt
+114,Herodotus,481? BCE,,,"Ιστορίαι Ηροδότου, Τόμος 2",book_114_Herodotus.txt
+115,Homer,751? BCE,"Palles, Alexandros",1851-1935,Ιλιάδα,book_115_Homer.txt
+116,Homer,751? BCE,"Christopoulos, Athanasios",1771-1847,Ιλιάδος Ραψωδία Α: Μεταφρασθείσα εις δημοτικούς στίχους,book_116_Homer.txt
+117,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Α,book_117_Homer.txt
+118,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Β,book_118_Homer.txt
+119,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Γ,book_119_Homer.txt
+120,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Δ,book_120_Homer.txt
+121,"Kalvos, Andreas",1792-1869,"Martelaos, Antonios",1754-1819,Η Λύρα Ανδρέου Κάλβου και Ανέκδοτος Ύμνος Αντωνίου Μαρτελάου,book_121_Kalvos_Andreas.txt
+122,Sophocles,496? BCE,"Kampanis, Aristos",1883-1956,Οιδίπους Τύραννος,book_122_Sophocles.txt
+123,"Kampyses, Giannes",1872-1901,,,Μυστικό του Γάμου - Φάρσα της Ζωής,book_123_Kampyses_Giannes.txt
+124,"Karkavitsas, Andreas",1866-1922,,,Ο αρχαιολόγος,book_124_Karkavitsas_Andreas.txt
+125,"Karkavitsas, Andreas",1866-1922,,,Διηγήματα,book_125_Karkavitsas_Andreas.txt
+126,"Karkavitsas, Andreas",1866-1922,,,Διηγήματα του Γυλιού,book_126_Karkavitsas_Andreas.txt
+127,"Karkavitsas, Andreas",1866-1922,,,Λόγια της Πλώρης: Θαλασσινά Διηγήματα,book_127_Karkavitsas_Andreas.txt
+128,"Karkavitsas, Andreas",1866-1922,,,Η Λυγερή,book_128_Karkavitsas_Andreas.txt
+129,"Karkavitsas, Andreas",1866-1922,,,Παλιές Αγάπες,book_129_Karkavitsas_Andreas.txt
+130,"Karolides, Paulos",1849-1930,,,Ο Αυτοκράτωρ Ηράκλειος,book_130_Karolides_Paulos.txt
+131,"Karolides, Paulos",1849-1930,,,Ο Αυτοκράτωρ Ιουστινιανός,book_131_Karolides_Paulos.txt
+132,"Karolides, Paulos",1849-1930,,,Ο Γερμανικός Φιλελληνισμός,book_132_Karolides_Paulos.txt
+133,"Karolides, Paulos",1849-1930,,,Εγχειρίδιον Βυζαντινής Ιστορίας,book_133_Karolides_Paulos.txt
+134,"Karolides, Paulos",1849-1930,,,Η Ευρώπη κατά τον 19ον αιώνα,book_134_Karolides_Paulos.txt
+135,"Kondylakes, Ioannes",1861-1920,,,Ενώ διέβαινα - Χρονογραφήματα,book_135_Kondylakes_Ioannes.txt
+136,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Δεύτερος",book_136_Lucian_of_Samosata.txt
+137,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Έκτος",book_137_Lucian_of_Samosata.txt
+138,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Πέμπτος",book_138_Lucian_of_Samosata.txt
+139,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Τέταρτος",book_139_Lucian_of_Samosata.txt
+140,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Τρίτος",book_140_Lucian_of_Samosata.txt
+141,"Kondylakes, Ioannes",1861-1920,,,Η ολοκαύτωσις του Αρκαδίου,book_141_Kondylakes_Ioannes.txt
+142,"Kondylakes, Ioannes",1861-1920,,,Ο Πατούχας,book_142_Kondylakes_Ioannes.txt
+143,"Kondylakes, Ioannes",1861-1920,,,Πρώτη αγάπη,book_143_Kondylakes_Ioannes.txt
+144,"Sukhovo-Kobylin, A. (Aleksandr)",1817-1903,"Konstantinidis, Agathoklis",1854-1920,"Ο Γάμος του Κρεντσίνσκη, Κωμωδία εις τρεις πράξεις - Πανδρολογήματα, Κωμωδία εις δύο πράξεις",book_144_Sukhovo_Kobylin_A_Aleksandr.txt
+145,Plato,428? BCE,"Harokopos, Aristeidis",1851,"Κριτίας, Ίππαρχος, Αντερασταί",book_145_Plato.txt
+146,"Deledda, Grazia",1871-1936,"Alexandridis, Christos",,Καλαμιές στον άνεμο,book_146_Deledda_Grazia.txt
+147,Plato,428? BCE,"Kountouriotes, Nikolaos",,Συμπόσιον : ή περί έρωτος,book_147_Plato.txt
+148,"Krystalles, Kostas",1868-1894,,,Έργα Ποιήματα - Πεζά Τόμος Δεύτερος,book_148_Krystalles_Kostas.txt
+149,"Krystalles, Kostas",1868-1894,,,Έργα Ποιήματα - Πεζά Τόμος Πρώτος,book_149_Krystalles_Kostas.txt
+150,"Krystalles, Kostas",1868-1894,,,Πεζογραφήματα,book_150_Krystalles_Kostas.txt
+151,"Valaorites, Aristoteles",1824-1879,,,Αθανάσης Διάκος - Αστραπόγιαννος,book_151_Valaorites_Aristoteles.txt
+152,Longus,,"Voutierides, El. P. (Elias P.)",1874-1941,Δάφνης και Χλόη,book_152_Longus.txt
+153,"Lucian, of Samosata",120-180,,,Lucian's Dialogues prepared for schools,book_153_Lucian_of_Samosata.txt
+154,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Δεύτερος",book_154_Lucian_of_Samosata.txt
+155,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Έκτος",book_155_Lucian_of_Samosata.txt
+156,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Πέμπτος",book_156_Lucian_of_Samosata.txt
+157,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Τέταρτος",book_157_Lucian_of_Samosata.txt
+158,"Lucian, of Samosata",120-180,"Kondylakes, Ioannes",1861-1920,"Λουκιανός - Άπαντα, Τόμος Τρίτος",book_158_Lucian_of_Samosata.txt
+159,Plato,428? BCE,"Lymperopoulos, A.",,"Ερυξίας, Αξίοχος, Αλκυών",book_159_Plato.txt
+160,Plato,428? BCE,"Lymperopoulos, A.",,"Ερυξίας, Αξίοχος, Αλκυών",book_160_Plato.txt
+161,"Marmontel, Jean-François",1723-1799,"Pangalos, Alexandros",,Ο Βελισάριος,book_161_Marmontel_Jean_Fran_ois.txt
+162,"Wilde, Oscar",1854-1900,"Marpoutzoglou, Alex G.",,Στοχασμοί,book_162_Wilde_Oscar.txt
+163,"Kalvos, Andreas",1792-1869,"Martelaos, Antonios",1754-1819,Η Λύρα Ανδρέου Κάλβου και Ανέκδοτος Ύμνος Αντωνίου Μαρτελάου,book_163_Kalvos_Andreas.txt
+164,"Marx, Karl",1818-1883,,,"Το κεφάλαιον
+Περίληψις Παύλου Λαφάργκ, μετά προλόγου Β. Παρέτο",book_164_Marx_Karl.txt
+165,"Melas, Leon",1812-1879,,,Ο Γεροστάθης; ή Αναμνήσεις της παιδικής μου ηλικίας,book_165_Melas_Leon.txt
+166,"Murray, Gilbert",1866-1957,"Menardos, Simos",1872-1933,Ιστορία της Αρχαίας Ελληνικής Λογοτεχνίας,book_166_Murray_Gilbert.txt
+167,Molière,1622-1673,"Polemes, Ioannes",1862-1924,Ο Αρχοντοχωριάτης,book_167_Moli_re.txt
+168,Molière,1622-1673,"Polemes, Ioannes",1862-1924,Ο κατά φαντασίαν ασθενής,book_168_Moli_re.txt
+169,Plato,428? BCE,"Moraitides, Alexandros",1850-1929,Απολογία Σωκράτους,book_169_Plato.txt
+170,"Moraitides, Alexandros",1850-1929,,,"Διηγήματα, Τόμος Α",book_170_Moraitides_Alexandros.txt
+171,"Moraitides, Alexandros",1850-1929,,,"Διηγήματα, Τόμος Β",book_171_Moraitides_Alexandros.txt
+172,"Moraitides, Alexandros",1850-1929,,,"Διηγήματα, Τόμος Γ",book_172_Moraitides_Alexandros.txt
+173,"Moraitides, Alexandros",1850-1929,,,"Διηγήματα, Τόμος Δ",book_173_Moraitides_Alexandros.txt
+174,Plato,428? BCE,"Moraitides, Alexandros",1850-1929,Ευθύφρων,book_174_Plato.txt
+175,"Murray, Gilbert",1866-1957,"Menardos, Simos",1872-1933,Ιστορία της Αρχαίας Ελληνικής Λογοτεχνίας,book_175_Murray_Gilbert.txt
+176,"Nirvanas, Paulos",1866-1937,,,Η βοσκοπούλα με τα μαργαριτάρια και άλλες μικρές ιστορίες,book_176_Nirvanas_Paulos.txt
+177,"Nirvanas, Paulos",1866-1937,,,Όταν σπάση τα δεσμά του: Δράμα σε μέρη τρία,book_177_Nirvanas_Paulos.txt
+178,"Nirvanas, Paulos",1866-1937,,,Το συναξάρι του Παπά-Παρθένη κι' άλλες νησιώτικες ιστορίες,book_178_Nirvanas_Paulos.txt
+179,,,,,Τα ανέκδοτα του Βασιλέως Γεωργίου Α,book_179_unknown.txt
+180,,,,,"Παραμύθια της Χαλιμάς Τόμος 1
+Ήτοι Διηγήσεις και Συβεβηκότα λίαν περίεργα και ωραία Συνταχθέντα εις την Αραβικήν υπό του πολυμαθούς Δερβίς Αμπου Mπεκήρ Κατά την έκδοσιν της Βενετίας",book_180_unknown.txt
+181,,,,,"Χαλιμά, Τόμος 2
+Εξακολούθησις των ιστοριών",book_181_unknown.txt
+182,,,,,"Χαλιμά, Τόμος 3
+Εξακολούθησις των ιστοριών",book_182_unknown.txt
+183,"Palamas, Kostes",1859-1943,,,Θάνατος Παλληκαριού,book_183_Palamas_Kostes.txt
+184,"Palamas, Kostes",1859-1943,,,Ύμνος εις την Αθηνά,book_184_Palamas_Kostes.txt
+185,"Palamas, Kostes",1859-1943,,,Οι χαιρετισμοί της Ηλιογέννητης,book_185_Palamas_Kostes.txt
+186,"Brugman, Karl",1849-1919,"Palles, Alexandros",1851-1935,Γραφτή και Δημοτική και το Γλωσσικό Ζήτημα στην Ελλάδα,book_186_Brugman_Karl.txt
+187,Homer,751? BCE,"Palles, Alexandros",1851-1935,Ιλιάδα,book_187_Homer.txt
+188,,,"Palles, Alexandros",1851-1935,Η Νέα Διαθήκη : κατά το Βατικανό Χειρόγραφο,book_188_unknown.txt
+189,"Marmontel, Jean-François",1723-1799,"Pangalos, Alexandros",,Ο Βελισάριος,book_189_Marmontel_Jean_Fran_ois.txt
+190,"Farrar, F. W. (Frederic William)",1831-1903,"Papadiamantes, Alexandros",1851-1911,Ο Βίος του Χριστού,book_190_Farrar_F_W_Frederic_William.txt
+191,"Papadiamantes, Alexandros",1851-1911,,,Η Γυφτοπούλα,book_191_Papadiamantes_Alexandros.txt
+192,"Papadiamantes, Alexandros",1851-1911,,,Η χολεριασμένη: Τα μετά θάνατον,book_192_Papadiamantes_Alexandros.txt
+193,"Papadiamantes, Alexandros",1851-1911,,,Η νοσταλγός,book_193_Papadiamantes_Alexandros.txt
+194,"Papadiamantes, Alexandros",1851-1911,,,Πασχαλινές ιστορίες,book_194_Papadiamantes_Alexandros.txt
+195,"Papadiamantes, Alexandros",1851-1911,,,Ο Πεντάρφανος,book_195_Papadiamantes_Alexandros.txt
+196,"Papadiamantes, Alexandros",1851-1911,,,Πρωτοχρονιάτικα διηγήματα,book_196_Papadiamantes_Alexandros.txt
+197,"Papadiamantes, Alexandros",1851-1911,,,Η Φόνισσα,book_197_Papadiamantes_Alexandros.txt
+198,"Papadiamantes, Alexandros",1851-1911,,,Χριστουγεννιάτικα διηγήματα,book_198_Papadiamantes_Alexandros.txt
+199,"Papadopoulou, Arsinoe",1853-1943,,,Η Φωτεινή - Ο μαγευμένος εργαλειός - Η καλή Νεράιδα,book_199_Papadopoulou_Arsinoe.txt
+200,"Papantoniou, Ch.",,,,"Ελληνική Εποποιία, Ο Εωσφόρος: [Ιωάννης Τσιμισκής]",book_200_Papantoniou_Ch.txt
+201,Plato,428? BCE,"Papantoniou, Ch.",,Μένων,book_201_Plato.txt
+202,"Papantoniou, Zacharias L.",1877-1940,,,Πεζοί Ρυθμοί,book_202_Papantoniou_Zacharias_L.txt
+203,"Marx, Karl",1818-1883,,,"Το κεφάλαιον
+Περίληψις Παύλου Λαφάργκ, μετά προλόγου Β. Παρέτο",book_203_Marx_Karl.txt
+204,"Parren, Kalliroe",1859-1940,,,Η νέα γυναίκα: Δράμα εις πράξεις τέσσαρας,book_204_Parren_Kalliroe.txt
+205,"Pasagiannes, Kostes G.",1872-1933,,,Μοσκιές - Διηγήματα,book_205_Pasagiannes_Kostes_G.txt
+206,"Verne, Jules",1828-1905,"Phermpos, Panagiotes I.",1851-1932,Ο Σάνσελλορ,book_206_Verne_Jules.txt
+207,"Phlores, Kostas",,,,Ο Ψυχάρης και το έργο του,book_207_Phlores_Kostas.txt
+208,Plato,428? BCE,"Moraitides, Alexandros",1850-1929,Απολογία Σωκράτους,book_208_Plato.txt
+209,Plato,428? BCE,"Lymperopoulos, A.",,"Ερυξίας, Αξίοχος, Αλκυών",book_209_Plato.txt
+210,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,Ευθύδημος,book_210_Plato.txt
+211,Plato,428? BCE,"Moraitides, Alexandros",1850-1929,Ευθύφρων,book_211_Plato.txt
+212,Plato,428? BCE,"Zambas, Kyriakos",1866,Θεαίτητος,book_212_Plato.txt
+213,Plato,428? BCE,"Zambas, Kyriakos",1866,"Ιππίας, Μείζων και Ελάσσων",book_213_Plato.txt
+214,Plato,428? BCE,"Zambas, Kyriakos",1866,Κρατύλος,book_214_Plato.txt
+215,Plato,428? BCE,"Harokopos, Aristeidis",1851,"Κριτίας, Ίππαρχος, Αντερασταί",book_215_Plato.txt
+216,Plato,428? BCE,"Zervos, I. (Ioannes)",1875-1944,Μενέξενоς,book_216_Plato.txt
+217,Plato,428? BCE,"Papantoniou, Ch.",,Μένων,book_217_Plato.txt
+218,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος B",book_218_Plato.txt
+219,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Α",book_219_Plato.txt
+220,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Γ",book_220_Plato.txt
+221,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Δ",book_221_Plato.txt
+222,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Ε",book_222_Plato.txt
+223,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 1",book_223_Plato.txt
+224,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 2",book_224_Plato.txt
+225,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 3",book_225_Plato.txt
+226,Plato,428? BCE,"Grypares, I. N. (Ioannes N.)",1870-1942,"Πολιτεία, Τόμος 4",book_226_Plato.txt
+227,Plato,428? BCE,"Zambas, Kyriakos",1866,Πολιτικός,book_227_Plato.txt
+228,Plato,428? BCE,"Harokopos, Aristeidis",1851,Πρωταγόρας,book_228_Plato.txt
+229,Plato,428? BCE,"Zambas, Kyriakos",1866,Σοφιστής,book_229_Plato.txt
+230,Plato,428? BCE,"Kountouriotes, Nikolaos",,Συμπόσιον : ή περί έρωτος,book_230_Plato.txt
+231,Plato,428? BCE,"Gratsiatos, Paulos",,"Τίμαιος, Τόμος Α",book_231_Plato.txt
+232,Plato,428? BCE,"Gratsiatos, Paulos",,"Τίμαιος, Τόμος Β",book_232_Plato.txt
+233,Plato,428? BCE,"Gounaris, K.",,Φαίδρος,book_233_Plato.txt
+234,Plato,428? BCE,"Harokopos, Aristeidis",1851,Φαίδων,book_234_Plato.txt
+235,Plato,428? BCE,"Zambas, Kyriakos",1866,Φίληβος,book_235_Plato.txt
+236,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 1
+Θησεύς - Ρωμύλος - Λυκούργος - Νουμάς",book_236_Plutarch.txt
+237,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 2
+Σόλων - Ποπλικόλας - Θεμιστοκλής - Καμίλλος - Περικλής - Φάβιος Μάξιμος",book_237_Plutarch.txt
+238,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 3
+Αλκιβιάδης - Κοριολάνος - Τιμολέων - Αιμίλιος Παύλος - Πελοπίδας - Μάρκελλος",book_238_Plutarch.txt
+239,"Poe, Edgar Allan",1809-1849,"Spandones, N. (Nikolaos)",1858-1913,Ιστορίες αλλόκοτες,book_239_Poe_Edgar_Allan.txt
+240,Molière,1622-1673,"Polemes, Ioannes",1862-1924,Ο Αρχοντοχωριάτης,book_240_Moli_re.txt
+241,Theocritus,301 BCE-261 BCE,"Polemes, Ioannes",1862-1924,Ειδύλλια,book_241_Theocritus.txt
+242,"Polemes, Ioannes",1862-1924,,,Ειρηνικά,book_242_Polemes_Ioannes.txt
+243,Molière,1622-1673,"Polemes, Ioannes",1862-1924,Ο κατά φαντασίαν ασθενής,book_243_Moli_re.txt
+244,"Polemes, Ioannes",1862-1924,,,Ο Βασιλιάς Ανήλιαγος,book_244_Polemes_Ioannes.txt
+245,"Shakespeare, William",1564-1616,"Polylas, Iakovos",1826-1898,Αμλέτος,book_245_Shakespeare_William.txt
+246,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Α,book_246_Homer.txt
+247,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Β,book_247_Homer.txt
+248,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Γ,book_248_Homer.txt
+249,Homer,751? BCE,"Polylas, Iakovos",1826-1898,Ομήρου Οδύσσεια Τόμος Δ,book_249_Homer.txt
+250,"Shakespeare, William",1564-1616,"Polylas, Iakovos",1826-1898,Η τρικυμία,book_250_Shakespeare_William.txt
+251,"Prévost, Marcel",1862-1941,"Economopoulos, Elias",1868-1929,Η Μάγισσα,book_251_Pr_vost_Marcel.txt
+252,"Psicharis, Ioannis",1854-1929,,,"Ρόδα και Μήλα, Τόμος Α'",book_252_Psicharis_Ioannis.txt
+253,"Psicharis, Ioannis",1854-1929,,,"Ρόδα και Μήλα, Τόμος Α'",book_253_Psicharis_Ioannis.txt
+254,"Psicharis, Ioannis",1854-1929,,,Το Ταξείδι μου,book_254_Psicharis_Ioannis.txt
+255,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 1
+Θησεύς - Ρωμύλος - Λυκούργος - Νουμάς",book_255_Plutarch.txt
+256,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 2
+Σόλων - Ποπλικόλας - Θεμιστοκλής - Καμίλλος - Περικλής - Φάβιος Μάξιμος",book_256_Plutarch.txt
+257,Plutarch,46-120,"Rankaves, Alexandros Rizos",1809-1892,"Πλουτάρχου Βίοι Παράλληλοι - Τόμος 3
+Αλκιβιάδης - Κοριολάνος - Τιμολέων - Αιμίλιος Παύλος - Πελοπίδας - Μάρκελλος",book_257_Plutarch.txt
+258,"Rhoides, Emmanouel D.",1835-1904,,,Αριστοτέλης Βαλαωρίτης,book_258_Rhoides_Emmanouel_D.txt
+259,"Rhoides, Emmanouel D.",1835-1904,,,Διηγήματα,book_259_Rhoides_Emmanouel_D.txt
+260,"Rhoides, Emmanouel D.",1835-1904,,,Η Πάπισσα Ιωάννα,book_260_Rhoides_Emmanouel_D.txt
+261,"Rhoides, Emmanouel D.",1835-1904,,,Συριανά Διηγήματα,book_261_Rhoides_Emmanouel_D.txt
+262,"Rodokanakes, Platon",1883-1919,,,Ο Άγιος Δημήτριος: Μυστήριον εις πράξεις 3,book_262_Rodokanakes_Platon.txt
+263,"Rostand, Edmond",1868-1918,"Stratigis, George",1860-1938,Συρανό δε Μπερζεράκ,book_263_Rostand_Edmond.txt
+264,"Lucian, of Samosata",120-180,,,Lucian's Dialogues prepared for schools,book_264_Lucian_of_Samosata.txt
+265,"Sangharakshita, Bhikshu",1925,"Doikas, Spiros",,Όραμα και Μεταμόρφωση : Μια εισαγωγή στο Ευγενές Οκταπλό Μονοπάτι του Βούδδα,book_265_Sangharakshita_Bhikshu.txt
+266,"Shakespeare, William",1564-1616,"Polylas, Iakovos",1826-1898,Αμλέτος,book_266_Shakespeare_William.txt
+267,"Shakespeare, William",1564-1616,"Damiralis, Michael",1892-1941,"Αντώνιος και Κλεοπάτρα
+Τραγωδία εις πράξεις 5",book_267_Shakespeare_William.txt
+268,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,Μάκβεθ,book_268_Shakespeare_William.txt
+269,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,"Οθέλλος
+Σαικσπείρου Τραγωδίαι Μέρος Β'",book_269_Shakespeare_William.txt
+270,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,Σαικσπείρου Τραγωδίαι : Μέρος Α'. Ρωμαίος και Ιουλιέτα,book_270_Shakespeare_William.txt
+271,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,"Σαικσπήρου Δράματα, Ο Βασιλιάς Ληρ",book_271_Shakespeare_William.txt
+272,"Shakespeare, William",1564-1616,"Polylas, Iakovos",1826-1898,Η τρικυμία,book_272_Shakespeare_William.txt
+273,"Sienkiewicz, Henryk",1846-1916,,,Quo Vadis (Πού πηγαίνεις): Μυθιστόρημα της Νερωνικής Εποχής,book_273_Sienkiewicz_Henryk.txt
+274,"Flaubert, Gustave",1821-1880,"Simiriotis, S.",,Ηρωδιάς,book_274_Flaubert_Gustave.txt
+275,"Solomos, Dionysios",1798-1857,,,Διονυσίου Σολωμού - Άπαντα τα Ευρισκόμενα,book_275_Solomos_Dionysios.txt
+276,Sophocles,496? BCE,"Chrestomanos, Konstantinos",1867-1911,Αντιγόνη,book_276_Sophocles.txt
+277,Sophocles,496? BCE,"Voutierides, El. P. (Elias P.)",1874-1941,Οιδίπους επί Κολωνώ,book_277_Sophocles.txt
+278,Sophocles,496? BCE,"Kampanis, Aristos",1883-1956,Οιδίπους Τύραννος,book_278_Sophocles.txt
+279,"Souris, Georgios",1853-1919,,,Λόγοι Φιλιππικοί Θεοδώρου : Δεληγιάννη Απαγγελθέντες εντός και εκτός του Συνδερίου Εμμέτρως δε Διασκευασθέντες,book_279_Souris_Georgios.txt
+280,"Souris, Georgios",1853-1919,,,"Ποιήματα, Τόμος Δεύτερος, Ανέκδοτα",book_280_Souris_Georgios.txt
+281,"Souris, Georgios",1853-1919,,,Ποιήματα - Τόμος Πέμπτος - Φασουλής Φιλόσοφος,book_281_Souris_Georgios.txt
+282,"Poe, Edgar Allan",1809-1849,"Spandones, N. (Nikolaos)",1858-1913,Ιστορίες αλλόκοτες,book_282_Poe_Edgar_Allan.txt
+283,"Stamatiades, Epameinondas I.",1835-1901,,,Ιστορία της Αλώσεως του Βυζαντίου υπό των Φράγκων και της αυτόθι εξουσίας αυτών,book_283_Stamatiades_Epameinondas_I.txt
+284,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_284_Greenfield_William.txt
+285,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_285_Greenfield_William.txt
+286,"Rostand, Edmond",1868-1918,"Stratigis, George",1860-1938,Συρανό δε Μπερζεράκ,book_286_Rostand_Edmond.txt
+287,"Sukhovo-Kobylin, A. (Aleksandr)",1817-1903,"Konstantinidis, Agathoklis",1854-1920,"Ο Γάμος του Κρεντσίνσκη, Κωμωδία εις τρεις πράξεις - Πανδρολογήματα, Κωμωδία εις δύο πράξεις",book_287_Sukhovo_Kobylin_A_Aleksandr.txt
+288,"Tagore, Rabindranath",1861-1941,"Trikoglides, K.",,Λυρικά αφιερώματα (Γιταντζάλι),book_288_Tagore_Rabindranath.txt
+289,Euripides,481? BCE,"Tanagras, Angelos",1877-1964,Ηλέκτρα,book_289_Euripides.txt
+290,"Dragoumes, Ion",1878-1920,,,Μελέται: 10 άρθρα του στον «Νουμά»,book_290_Dragoumes_Ion.txt
+291,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_291_Greenfield_William.txt
+292,"Greenfield, William",1799-1831,,,A Greek-English Lexicon to the New Testament,book_292_Greenfield_William.txt
+293,Theocritus,301 BCE-261 BCE,"Polemes, Ioannes",1862-1924,Ειδύλλια,book_293_Theocritus.txt
+294,Virgil,71 BCE-20 BCE,"Theotokes, Konstantinos",1872-1923,Τα Γεωργικά,book_294_Virgil.txt
+295,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος δεύτερος",book_295_Thucydides.txt
+296,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος πρώτος",book_296_Thucydides.txt
+297,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος τέταρτος",book_297_Thucydides.txt
+298,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος τρίτος",book_298_Thucydides.txt
+299,"Tolstoy, Leo, graf",1828-1910,"Economopoulos, Elias",1868-1929,Άννα Καρένιν,book_299_Tolstoy_Leo_graf.txt
+300,"Tagore, Rabindranath",1861-1941,"Trikoglides, K.",,Λυρικά αφιερώματα (Γιταντζάλι),book_300_Tagore_Rabindranath.txt
+301,,,"Trikoglides, K.",,"Οι ευτράπελες ιστορίες του, Νασρ-εν-ντιν Χότζα",book_301_unknown.txt
+302,"Trikoupes, Spyridon",1788-1873,,,"Ιστορία της Ελληνικής Επαναστάσεως, Τόμος Α",book_302_Trikoupes_Spyridon.txt
+303,"Trikoupes, Spyridon",1788-1873,,,"Ιστορία της Ελληνικής Επαναστάσεως, Τόμος Β",book_303_Trikoupes_Spyridon.txt
+304,"Trikoupes, Spyridon",1788-1873,,,"Ιστορία της Ελληνικής Επαναστάσεως, Τόμος Γ",book_304_Trikoupes_Spyridon.txt
+305,"Trikoupes, Spyridon",1788-1873,,,"Ιστορία της Ελληνικής Επαναστάσεως, Τόμος Δ",book_305_Trikoupes_Spyridon.txt
+306,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Άλκηστις,book_306_Euripides.txt
+307,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Ανδρομάχη,book_307_Euripides.txt
+308,Euripides,481? BCE,"Tsokopoulos, George B.",1871-1923,Κύκλωψ,book_308_Euripides.txt
+309,"Valaorites, Aristoteles",1824-1879,,,Αθανάσης Διάκος - Αστραπόγιαννος,book_309_Valaorites_Aristoteles.txt
+310,"Velaras, Ioannes",1771-1823,,,Μύθοι,book_310_Velaras_Ioannes.txt
+311,"Velaras, Ioannes",1771-1823,,,Ποιήματα και Πεζά τινα,book_311_Velaras_Ioannes.txt
+312,"Bédier, Joseph",1864-1938,"Ventiris, Nikolaos",,Το μυθιστόρημα του Τριστάνου και της Ιζόλδης,book_312_B_dier_Joseph.txt
+313,"Verne, Jules",1828-1905,,,Ο δεκαπενταετής πλοίαρχος,book_313_Verne_Jules.txt
+314,"Verne, Jules",1828-1905,"Phermpos, Panagiotes I.",1851-1932,Ο Σάνσελλορ,book_314_Verne_Jules.txt
+315,"Vikelas, Demetrios",1835-1908,,,Διηγήματα,book_315_Vikelas_Demetrios.txt
+316,"Vikelas, Demetrios",1835-1908,,,Λουκής Λάρας,book_316_Vikelas_Demetrios.txt
+317,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,Μάκβεθ,book_317_Shakespeare_William.txt
+318,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,"Οθέλλος
+Σαικσπείρου Τραγωδίαι Μέρος Β'",book_318_Shakespeare_William.txt
+319,"Andersen, H. C. (Hans Christian)",1805-1875,"Vikelas, Demetrios",1835-1908,"Παραμύθια Δανικά, εκ των του Ανδερσεν",book_319_Andersen_H_C_Hans_Christian.txt
+320,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,Σαικσπείρου Τραγωδίαι : Μέρος Α'. Ρωμαίος και Ιουλιέτα,book_320_Shakespeare_William.txt
+321,"Shakespeare, William",1564-1616,"Vikelas, Demetrios",1835-1908,"Σαικσπήρου Δράματα, Ο Βασιλιάς Ληρ",book_321_Shakespeare_William.txt
+322,Virgil,71 BCE-20 BCE,"Theotokes, Konstantinos",1872-1923,Τα Γεωργικά,book_322_Virgil.txt
+323,"Vizyenos, G. M. (Georgios M.)",1849-1896,,,Ποίος ήτον ο φονεύς του αδελφού μου,book_323_Vizyenos_G_M_Georgios_M.txt
+324,"Vlachos, Angelos",1838-1920,,,"Ανάλεκτα Τόμος Πρώτος
+Διηγήματα - Κοινωνικαί εικόνες και μελέται",book_324_Vlachos_Angelos.txt
+325,Voltaire,1694-1778,,,Ο Αγαθούλης,book_325_Voltaire.txt
+326,Longus,,"Voutierides, El. P. (Elias P.)",1874-1941,Δάφνης και Χλόη,book_326_Longus.txt
+327,Sophocles,496? BCE,"Voutierides, El. P. (Elias P.)",1874-1941,Οιδίπους επί Κολωνώ,book_327_Sophocles.txt
+328,Euripides,481? BCE,"Voutierides, El. P. (Elias P.)",1874-1941,Ορέστης,book_328_Euripides.txt
+329,"Vrailas-Armenes, Petros",1813,,,Η φιλοσοφία του Σωκράτους κατά A. Fouillée,book_329_Vrailas_Armenes_Petros.txt
+330,"Vrokines, Laurentios S.",1847-1910,,,Σύντομος αφήγησις του βίου του Ιωάννου Καποδιστρίου,book_330_Vrokines_Laurentios_S.txt
+331,"Vyzantios, D. K. (Demetrios Konstantinou)",1790-1853,,,"Η Βαβυλωνία ή η κατά τόπους διαφθορά της ελληνικής γλώσσης
+Κωμωδία εις πέντε πράξεις",book_331_Vyzantios_D_K_Demetrios_Konstantinou.txt
+332,"Vyzantios, D. K. (Demetrios Konstantinou)",1790-1853,,,Ο Σινάνης: Κωμωδία εις πέντε πράξεις,book_332_Vyzantios_D_K_Demetrios_Konstantinou.txt
+333,"Wilde, Oscar",1854-1900,"Hatzigavriil, M.",,Ιδανικός σύζυγος: Δράμα εις τέσσαρας πράξεις,book_333_Wilde_Oscar.txt
+334,"Wilde, Oscar",1854-1900,"Marpoutzoglou, Alex G.",,Στοχασμοί,book_334_Wilde_Oscar.txt
+335,Xenophon,432 BCE-351,"Anastasopoulos, Demetrios",1873,Κύρου Ανάβασις Τόμος 1,book_335_Xenophon.txt
+336,Xenophon,432 BCE-351,"Anastasopoulos, Demetrios",1873,Κύρου Ανάβασις Τόμος 2,book_336_Xenophon.txt
+337,Aristotle,385 BCE-323 BCE,"Zambas, Kyriakos",1866,"Ηθικά Νικομάχεια, Τόμος Δεύτερος",book_337_Aristotle.txt
+338,Aristotle,385 BCE-323 BCE,"Zambas, Kyriakos",1866,"Ηθικά Νικομάχεια, Τόμος Πρώτος",book_338_Aristotle.txt
+339,Plato,428? BCE,"Zambas, Kyriakos",1866,Θεαίτητος,book_339_Plato.txt
+340,Plato,428? BCE,"Zambas, Kyriakos",1866,"Ιππίας, Μείζων και Ελάσσων",book_340_Plato.txt
+341,Plato,428? BCE,"Zambas, Kyriakos",1866,Κρατύλος,book_341_Plato.txt
+342,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος B",book_342_Plato.txt
+343,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Α",book_343_Plato.txt
+344,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Γ",book_344_Plato.txt
+345,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Δ",book_345_Plato.txt
+346,Plato,428? BCE,"Zambas, Kyriakos",1866,"Νόμοι και Επινομίς, Τόμος Ε",book_346_Plato.txt
+347,Plato,428? BCE,"Zambas, Kyriakos",1866,Πολιτικός,book_347_Plato.txt
+348,Plato,428? BCE,"Zambas, Kyriakos",1866,Σοφιστής,book_348_Plato.txt
+349,Plato,428? BCE,"Zambas, Kyriakos",1866,Φίληβος,book_349_Plato.txt
+350,Aristotle,385 BCE-323 BCE,"Zervos, I. (Ioannes)",1875-1944,Αθηναίων Πολιτεία,book_350_Aristotle.txt
+351,Plato,428? BCE,"Zervos, I. (Ioannes)",1875-1944,Μενέξενоς,book_351_Plato.txt
+352,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος δεύτερος",book_352_Thucydides.txt
+353,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος πρώτος",book_353_Thucydides.txt
+354,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος τέταρτος",book_354_Thucydides.txt
+355,Thucydides,456? BCE,"Zervos, I. (Ioannes)",1875-1944,"Πελοποννησιακός Πόλεμος, Τόμος τρίτος",book_355_Thucydides.txt
+356,Aeschylus,526 BCE-457 BCE,"Zervos, I. (Ioannes)",1875-1944,Πέρσαι,book_356_Aeschylus.txt
+357,Aeschylus,526 BCE-457 BCE,"Zervos, I. (Ioannes)",1875-1944,Προμηθεύς Δεσμώτης,book_357_Aeschylus.txt
