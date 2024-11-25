@@ -28,7 +28,8 @@ class XMLTextExtractor:
         }
         self.ignore_tags = {
             'label','note', 'ref', 'bibl', 'foreign', 'figDesc', 'graphic',
-            'figure', 'app', 'rdg', 'fw', 'back', 'teiHeader', 'milestone'
+            'figure', 'app', 'rdg', 'fw', 'back', 'teiHeader',
+            #'milestone'
         }
         self.namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
         
@@ -65,21 +66,13 @@ class XMLTextExtractor:
     def process_element_text(self, element: etree._Element) -> str:
         """
         Process text directly attached to an element, excluding nested elements.
+        Only processes the element's own text, not its tail (tail is handled by parent).
         """
         if element.tag.split('}')[-1] in self.ignore_tags:
             return ""
             
-        text_parts = []
-        
-        # Add the element's direct text if it exists
-        if element.text and element.text.strip():
-            text_parts.append(element.text.strip())
-            
-        # Add the tail text if it exists
-        if element.tail and element.tail.strip():
-            text_parts.append(element.tail.strip())
-            
-        return ' '.join(text_parts)
+        # Only return the element's direct text if it exists
+        return element.text.strip() if element.text else ""
 
     def extract_nested_text(self, div_elem: etree._Element) -> List[str]:
         """
@@ -88,7 +81,7 @@ class XMLTextExtractor:
         """
         text_parts = []
         
-        # First, get any text directly in this div before nested elements
+        # Get the initial text before any child elements
         if div_elem.text and div_elem.text.strip():
             text_parts.append(div_elem.text.strip())
         
@@ -96,25 +89,20 @@ class XMLTextExtractor:
         for child in div_elem:
             child_tag = child.tag.split('}')[-1]
             
-            if child_tag == 'div':
-                # If it's a div, recursively process it if valid
-                if self.is_valid_div(child):
-                    nested_text = self.extract_nested_text(child)
-                    text_parts.extend(nested_text)
-            elif child_tag not in self.ignore_tags:
-                # For non-div elements that aren't ignored, process their text
-                child_text = self.process_element_text(child)
-                if child_text:
-                    text_parts.append(child_text)
-                    
-                # Process their children (except for nested divs which are handled separately)
-                for grandchild in child:
-                    if grandchild.tag.split('}')[-1] != 'div':
-                        grandchild_text = self.process_element_text(grandchild)
-                        if grandchild_text:
-                            text_parts.append(grandchild_text)
+            # Skip ignored tags
+            if child_tag in self.ignore_tags:
+                continue
+                
+            # For divs, check if they're valid before processing
+            if child_tag == 'div' and not self.is_valid_div(child):
+                continue
+                
+            # Recursively process the child and its nested elements
+            nested_text = self.extract_nested_text(child)
+            if nested_text:
+                text_parts.extend(nested_text)
             
-            # Get any tail text
+            # Get any tail text that appears after this child element
             if child.tail and child.tail.strip():
                 text_parts.append(child.tail.strip())
         
@@ -236,10 +224,15 @@ def process_files(input_folder: str, output_folder: str, csv_output: str):
 
 def main():
     """Main entry point of the script."""
+    #'''
     input_folder = '/home/fivos/Desktop/First1KGreek_fork/data'
-    output_folder = '/home/fivos/Desktop/First1KGreek_fork/1k_extracted_text_v7'
-    csv_output = '/home/fivos/Desktop/First1KGreek_fork/1k_extracted_text_v7/1k_metadata.csv'
-    
+    output_folder = '/home/fivos/Desktop/First1KGreek_fork/1k_extracted_text_8v'
+    csv_output = '/home/fivos/Desktop/First1KGreek_fork/1k_metadata.csv'
+    '''
+    input_folder = '/home/fivos/Desktop/canonical-greekLit/data/'
+    output_folder = '/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v1'
+    csv_output = '/home/fivos/Desktop/canonical-greekLit/Classics_metadata.csv'
+    '''
     try:
         process_files(input_folder, output_folder, csv_output)
         logging.info("Processing completed successfully")
