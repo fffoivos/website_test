@@ -191,14 +191,13 @@ def process_directory(input_dir: str, output_dir: str, threshold: int = 5, mode:
 
 def main():
     # Configuration
-    input_directory = os.getcwd()
+    input_directory = "/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v3/"
     mode = "clean" # "analysis" or "clean"
     output_directory = "latin_analysis" if mode == "analysis" else "cleaned_files"
     threshold = 0  # Default threshold for separating short and long streaks
     
     print(f"Processing texts from: {input_directory}")
     print(f"Mode: {mode}")
-    print(f"Saving {'reports' if mode == 'analysis' else 'cleaned files'} to: {output_directory}")
     
     process_directory(input_directory, output_directory, threshold, mode)
     print("\nAnalysis complete!")

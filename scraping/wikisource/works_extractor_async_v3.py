@@ -1,4 +1,4 @@
-#works_extractor_async.py
+#works_extractor_async_v3.py
 
 import requests
 import aiohttp
@@ -52,7 +52,8 @@ def process_links(text: str, base_url: str, visited_urls: set = None, timeout: i
                         response.raise_for_status()
                         target_soup = BeautifulSoup(response.text, 'html.parser')
                         
-                        if not validate_page_structure(target_soup):
+                        title, author = validate_page_structure(target_soup)
+                        if not title and author:
                             replacement = f"\n{link_text}\n"
                             link.replace_with(replacement)
                             continue
@@ -88,16 +89,34 @@ def process_links(text: str, base_url: str, visited_urls: set = None, timeout: i
         print(f"Unexpected error in process_links: {e}")
         return text.strip()
 
-def validate_page_structure(soup: BeautifulSoup) -> bool:
-    """Validate that the page is a valid wikisource page and not an author page."""
+def validate_page_structure(soup: BeautifulSoup) -> Tuple[Optional[str], Optional[str]]:
+    """Extract title and author from header template if valid work page."""
     try:
-        authorbox = soup.find('table', {'class': 'authorbox'})
-        if authorbox:
-            return False
-        return True
+        # Check if header template exists
+        header = soup.find('table', {'id': 'headertemplate', 'class': 'headertemplate'})
+        if not header:
+            print("Not a valid work page - skipping")
+            return None, None
+        
+        # Find all spans with title and author IDs
+        title_author_spans = header.find_all('span', {'id': ['ws-title', 'ws-author']})
+        
+        # Create dictionary of {type: content} from spans
+        spans_dict = {}
+        for span in title_author_spans:
+            field_type = span['id'].split('-')[1]  # Get 'title' or 'author' from 'ws-title' or 'ws-author'
+            content = span.get_text().strip()
+            spans_dict[field_type] = content
+        
+        # Check if both title and author were found
+        if set(spans_dict.keys()) == {'title', 'author'}:
+            return spans_dict['title'], spans_dict['author']
+        
+        return None, None
+        
     except Exception as e:
-        print(f"Error validating page structure: {e}")
-        return False
+        print(f"Error validating page: {e}")
+        return None, None        
 
 def sanitize_filename(url: str) -> str:
     """Convert a URL into a readable filename."""

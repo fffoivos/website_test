@@ -163,6 +163,10 @@ def process_files(input_folder: str, output_folder: str, csv_output: str):
     # Create output folder if it doesn't exist
     Path(output_folder).mkdir(parents=True, exist_ok=True)
     
+    # Create failed_extractions folder
+    failed_folder = os.path.join(output_folder, 'failed_extractions')
+    Path(failed_folder).mkdir(parents=True, exist_ok=True)
+    
     # Calculate maximum depth to traverse
     max_depth = Path(input_folder).resolve().parts.__len__() + 2
 
@@ -200,10 +204,17 @@ def process_files(input_folder: str, output_folder: str, csv_output: str):
                         index += 1
                         logging.info(f"Successfully processed {file_name}")
                     else:
-                        logging.warning(f"No valid text content found in {file_name}")
-                
+                        # Copy file to failed_extractions if text extraction failed
+                        failed_file_path = os.path.join(failed_folder, file_name)
+                        import shutil
+                        shutil.copy2(xml_file_path, failed_file_path)
+                        logging.warning(f"No text content extracted from {file_name} - copied to failed_extractions")
                 except Exception as e:
-                    logging.error(f"Error processing {file_name}: {str(e)}")
+                    # Copy file to failed_extractions if any error occurred
+                    failed_file_path = os.path.join(failed_folder, file_name)
+                    import shutil
+                    shutil.copy2(xml_file_path, failed_file_path)
+                    logging.error(f"Error processing {file_name}: {str(e)} - copied to failed_extractions")
             else:
                 logging.debug(f"Skipping file: {file_name}")
 
@@ -224,15 +235,15 @@ def process_files(input_folder: str, output_folder: str, csv_output: str):
 
 def main():
     """Main entry point of the script."""
-    #'''
+    '''
     input_folder = '/home/fivos/Desktop/First1KGreek_fork/data'
     output_folder = '/home/fivos/Desktop/First1KGreek_fork/1k_extracted_text_8v'
     csv_output = '/home/fivos/Desktop/First1KGreek_fork/1k_metadata.csv'
     '''
     input_folder = '/home/fivos/Desktop/canonical-greekLit/data/'
-    output_folder = '/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v1'
+    output_folder = '/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v2'
     csv_output = '/home/fivos/Desktop/canonical-greekLit/Classics_metadata.csv'
-    '''
+    #'''
     try:
         process_files(input_folder, output_folder, csv_output)
         logging.info("Processing completed successfully")

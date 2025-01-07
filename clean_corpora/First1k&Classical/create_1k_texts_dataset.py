@@ -21,6 +21,8 @@ def create_texts_dataset(cleaned_files_dir: str, metadata_path: str) -> pd.DataF
     """
     # Read metadata
     metadata_df = pd.read_csv(metadata_path)
+    # Extract just the filename from the full path in input_file column
+    metadata_df['input_file'] = metadata_df['input_file'].apply(os.path.basename)
     
     # Initialize lists to store data
     texts_data: List[Dict[str, str]] = []
@@ -34,7 +36,7 @@ def create_texts_dataset(cleaned_files_dir: str, metadata_path: str) -> pd.DataF
         xml_filename = f"{base_filename}.xml"
         
         # Find matching metadata row
-        metadata_row = metadata_df[metadata_df['filename'] == xml_filename]
+        metadata_row = metadata_df[metadata_df['input_file'] == xml_filename]
         
         if not metadata_row.empty:
             # Read text content
@@ -54,9 +56,9 @@ def create_texts_dataset(cleaned_files_dir: str, metadata_path: str) -> pd.DataF
 
 def main():
     # Configuration
-    cleaned_files_dir = "/home/fivos/Desktop/First1KGreek_fork/1k_extracted_text_8v/cleaned_files/"  # Directory containing cleaned text files
-    metadata_path = "/home/fivos/Desktop/First1KGreek_fork/1k_metadata.csv"  # Path to metadata CSV file
-    output_file = "/home/fivos/Desktop/First1KGreek_fork/1k_texts.parquet"  # Output parquet file name
+    cleaned_files_dir = "/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v3/cleaned_output"  # Directory containing cleaned text files
+    metadata_path = "/home/fivos/Desktop/canonical-greekLit/Classics_metadata.csv"  # Path to metadata CSV file
+    output_file = "/home/fivos/Desktop/canonical-greekLit/Classic_AG_texts_v2.parquet"  # Output parquet file name
     
     print(f"Reading cleaned files from: {cleaned_files_dir}")
     print(f"Reading metadata from: {metadata_path}")

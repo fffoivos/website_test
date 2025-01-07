@@ -1,12 +1,10 @@
-#works_extractor_async.py
-
 import requests
 import aiohttp
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 from bs4 import BeautifulSoup, Comment
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 from urllib.parse import urljoin, unquote
 import os
 import itertools
@@ -14,40 +12,59 @@ import pandas as pd
 import time
 import ftfy
 
-def process_links(text: str, base_url: str, visited_urls: set = None, timeout: int = 300) -> str:
+def get_focused_context(link_element, max_length=100):
+    """Extract focused context around the link with limited length."""
+    parent_text = link_element.parent.get_text()
+    link_text = link_element.get_text()
+    
+    try:
+        link_pos = parent_text.index(link_text)
+        context_before = parent_text[max(0, link_pos - 30):link_pos].strip()
+        context_after = parent_text[link_pos + len(link_text):link_pos + len(link_text) + 30].strip()
+        
+        if link_pos > 30:
+            context_before = "..." + context_before
+        if link_pos + len(link_text) + 30 < len(parent_text):
+            context_after = context_after + "..."
+            
+        return f"{context_before} {link_text} {context_after}".strip()
+    except ValueError:
+        return parent_text[:60].strip() + "..." if len(parent_text) > 60 else parent_text.strip()
+
+def process_links(text: str, base_url: str, visited_urls: set = None, timeout: int = 300) -> Tuple[str, list]:
     """Process links in the text by either removing them or extracting their content."""
     try:
-        # Initialize visited_urls if not provided
         if visited_urls is None:
             visited_urls = set()
         
-        # Add depth tracking to prevent excessive recursion
         if len(visited_urls) > 50:  # Limit recursive depth
             print(f"Maximum link depth reached, stopping further link processing")
-            return text.strip()
+            return text.strip(), []
             
         soup = BeautifulSoup(text, 'html.parser')
+        references = []
+        reference_counter = 1
         
         for link in soup.find_all('a'):
             try:
                 href = link.get('href', '')
                 link_text = link.get_text().strip()
                 
+                # Find the parent context
+                parent = link.find_parent(['p', 'dd', 'li'])
+                context_type = parent.name if parent else 'p'
+                
                 if href.startswith('/wiki/') or href.startswith(base_url):
                     try:
-                        # Resolve relative URL
                         full_url = base_url + href if href.startswith('/') else href
                         
-                        # Skip if we've already processed this URL or if it's not text content
                         if full_url in visited_urls or not is_text_content(full_url):
                             replacement = f"\n{link_text}\n"
                             link.replace_with(replacement)
                             continue
                         
-                        # Add URL to visited set
                         visited_urls.add(full_url)
                         
-                        # First validate the target page structure
                         response = requests.get(full_url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=timeout)
                         response.raise_for_status()
                         target_soup = BeautifulSoup(response.text, 'html.parser')
@@ -57,18 +74,33 @@ def process_links(text: str, base_url: str, visited_urls: set = None, timeout: i
                             link.replace_with(replacement)
                             continue
                         
-                        content = extract_work_content(full_url, look_for_a_tags=True, is_entry_page=False, visited_urls=visited_urls, timeout=timeout)
+                        content = extract_work_content(full_url, look_for_a_tags=True, 
+                                                     is_entry_page=False, visited_urls=visited_urls, 
+                                                     timeout=timeout)
+                        
                         if content['text']:
-                            replacement = f"\n{link_text}\n{content['text']}\n"
+                            if context_type in ['p', 'dd']:
+                                context = get_focused_context(link)
+                                references.append({
+                                    'number': reference_counter,
+                                    'context': context,
+                                    'link_text': link_text,
+                                    'content': content['text']
+                                })
+                                replacement = f"{link_text}[{reference_counter}]"
+                                reference_counter += 1
+                            else:  # 'li' or other contexts
+                                replacement = f"\n{link_text}\n{content['text']}\n"
+                            
                             link.replace_with(replacement)
                             continue
+                            
                     except (requests.RequestException, requests.Timeout, RecursionError, MemoryError) as e:
                         print(f"Error processing link: {e}")
                         replacement = f"\n{link_text}\n"
                         link.replace_with(replacement)
                         continue
                 
-                # For external or failed links, format as title
                 replacement = f"\n{link_text}\n"
                 link.replace_with(replacement)
                 
@@ -76,17 +108,22 @@ def process_links(text: str, base_url: str, visited_urls: set = None, timeout: i
                 print(f"Error processing individual link: {e}")
                 continue
         
-        # Clean up multiple consecutive line breaks while preserving at least one
         text = str(soup)
         text = '\n'.join(line for line, _ in itertools.groupby(text.splitlines()))
-        return text.strip()
+        
+        if references:
+            text += "\n\nΑναφορές:\n"
+            for ref in references:
+                text += f"\n{ref['number']}. Αναφορά του κειμένου σε «{ref['context']}» : {ref['content']}\n"
+        
+        return text.strip(), references
         
     except (RecursionError, MemoryError) as e:
         print(f"Critical error in process_links: {e}")
-        return text.strip()
+        return text.strip(), []
     except Exception as e:
         print(f"Unexpected error in process_links: {e}")
-        return text.strip()
+        return text.strip(), []
 
 def validate_page_structure(soup: BeautifulSoup) -> bool:
     """Validate that the page is a valid wikisource page and not an author page."""
@@ -101,31 +138,25 @@ def validate_page_structure(soup: BeautifulSoup) -> bool:
 
 def sanitize_filename(url: str) -> str:
     """Convert a URL into a readable filename."""
-    # Get the last part of the URL and decode URL encoding
     filename = unquote(url.split('/')[-1])
-    
-    # Replace problematic characters
     filename = filename.replace('_', ' ')
-    
-    # Add .txt extension if not present
     if not filename.endswith('.txt'):
         filename += '.txt'
-        
     return filename
 
-def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: bool = False, visited_urls: set = None, timeout: int = 300) -> Dict[str, Optional[str]]:
+def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: bool = False, 
+                        visited_urls: set = None, timeout: int = 300) -> Dict[str, Optional[str]]:
     """Extract the text content and metadata from a work's page."""
     content = {
         'translator': None,
-        'text': None
+        'text': None,
+        'references': []
     }
     
     try:
-        # Initialize visited_urls if not provided
         if visited_urls is None:
             visited_urls = set()
         
-        # Add current URL to visited set
         visited_urls.add(url)
         
         headers = {
@@ -136,21 +167,17 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Only validate non-entry pages
         if not is_entry_page and not validate_page_structure(soup):
             print(f"Skipping {url}: Author page or external link")
             return content
             
-        # Get the main content div
         content_div = soup.find('div', {'class': 'mw-content-ltr mw-parser-output'})
         if not content_div:
             return content
             
-        # Remove style tags first
         for style in content_div.find_all('style'):
             style.decompose()
             
-        # Extract translator from header template if exists and then remove header
         header = content_div.find('table', {'id': 'headertemplate'})
         if header:
             header_text = header.get_text()
@@ -160,7 +187,6 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
                     content['translator'] = translator_span.text.strip()
             header.decompose()
         
-        # Remove unwanted elements
         unwanted_elements = [
             ('table', {'class': 'header_notes'}),
             ('div', {'class': ['ws-noexport', 'noprint', 'navigation-not-searchable']}),
@@ -175,7 +201,6 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
             for element in content_div.find_all(tag, attrs):
                 element.decompose()
         
-        # Remove HTML comments
         for comment in content_div.find_all(string=lambda text: isinstance(text, Comment)):
             comment.extract()
         
@@ -183,55 +208,44 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
             if isinstance(element, str):
                 return element.strip()
             
-            # Special handling for inline formatting tags
             if element.name in ['i', 'b', 'em', 'strong']:
                 text = ''.join(process_element(child) for child in element.children)
                 next_sibling = element.next_sibling
-                
-                # If next sibling is text and starts with punctuation
                 if isinstance(next_sibling, str) and next_sibling.strip() and next_sibling.strip()[0] in '.,;:!?)]}':
-                    # Return just the text, the punctuation itself will add necessary space after
                     return text
-                    
-                # If it's not followed by punctuation, add space after
                 return text + ' '
             
             if element.name == 'dl':
-                    parts = []
-                    for child in element.children:
-                        if child.name == 'dd':  # Only process dd elements
-                            text = process_element(child)
-                            if text.strip():  # Only add non-empty lines
-                                parts.append(text)
-                    return '\n'.join(parts) + '\n'  # Join with newlines and add final newline
+                parts = []
+                for child in element.children:
+                    if child.name == 'dd':
+                        text = process_element(child)
+                        if text.strip():
+                            parts.append(text)
+                return '\n'.join(parts) + '\n'
 
             if element.name == 'dd':
                 text = ''.join(process_element(child) for child in element.children)
-                return text.strip()  # Return stripped text, letting dl handle the newlines
+                return text.strip()
             
-            # Handle links
             if element.name == 'a':
                 if look_for_a_tags:
                     return str(element)
                 else:
                     return element.get_text()
             
-            # Skip certain elements
             if element.name in ['sup', 'span'] and 'reference' in element.get('class', []):
                 return ''
             if element.name == 'span' and any(cls in element.get('class', []) for cls in ['pagenum', 'mw-editsection']):
                 return ''
             
-            # Handle line breaks
             if element.name == 'br':
                 return '\n'
             
-            # Handle block elements
             if element.name in ['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
                 text = ''.join(process_element(child) for child in element.children)
                 return f'\n{text}\n' if text.strip() else '\n'
             
-            # Handle lists
             if element.name in ['ul', 'ol']:
                 items = []
                 for li in element.find_all('li', recursive=False):
@@ -240,13 +254,10 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
                         items.append(f"• {item_text}")
                 return '\n'.join(items) + '\n\n' if items else ''
             
-            # Default: process all children
             return ''.join(process_element(child) for child in element.children)
         
-        # Process the content
         processed_text = ''.join(process_element(element) for element in content_div.children)
         
-        # Clean up multiple consecutive line breaks while preserving structure
         lines = []
         for line in processed_text.split('\n'):
             stripped = line.strip()
@@ -255,15 +266,13 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
             else:
                 lines.append('')
         
-        # Join lines and apply ftfy
         content['text'] = '\n'.join(lines).strip()
         content['text'] = ftfy.fix_text(content['text'])
         
-        # Process links if required
         if look_for_a_tags and content['text']:
-            content['text'] = process_links(content['text'], 'https://el.wikisource.org', visited_urls, timeout)
+            content['text'], references = process_links(content['text'], 'https://el.wikisource.org', visited_urls, timeout)
             content['text'] = content['text'].strip()
-            # Apply ftfy one final time after link processing
+            content['references'] = references
             content['text'] = ftfy.fix_text(content['text'])
         
         return content
@@ -295,7 +304,6 @@ async def process_url_async(session, semaphore, row, idx, timeout):
     
     async with semaphore:
         try:
-            # Use ThreadPoolExecutor for CPU-bound operations
             loop = asyncio.get_running_loop()
             with ThreadPoolExecutor() as pool:
                 content = await loop.run_in_executor(
@@ -313,6 +321,7 @@ async def process_url_async(session, semaphore, row, idx, timeout):
                 'index': idx,
                 'text': content['text'],
                 'translator': content['translator'],
+                'references': content['references'],
                 'processing_time': processing_time,
                 'error': None,
                 **row.to_dict()
@@ -324,6 +333,7 @@ async def process_url_async(session, semaphore, row, idx, timeout):
                 'index': idx,
                 'text': None,
                 'translator': None,
+                'references': [],
                 'processing_time': None,
                 'error': str(e),
                 **row.to_dict()
@@ -341,14 +351,12 @@ async def process_chunk_async(chunk_df, start_idx, semaphore, timeout):
 async def process_urls_async(input_parquet: str, output_parquet: str, progress_csv: str, 
                            limit_authors: bool = False, author_num: int = 10, 
                            timeout: int = 300, chunk_size: int = 50, max_concurrent: int = 10):
-    """Asynchronous version of process_urls_from_parquet with preserved functionality."""
-    # Read input parquet
+    """Main processing function that handles the async workflow."""
     df = pd.read_parquet(input_parquet)
     
     if 'url' not in df.columns:
         raise ValueError("Input parquet must contain 'url' column")
     
-    # Handle existing progress
     processed_indices = set()
     results = []
     if os.path.exists(progress_csv):
@@ -357,7 +365,6 @@ async def process_urls_async(input_parquet: str, output_parquet: str, progress_c
         results = progress_df.to_dict('records')
         print(f"Found existing progress, {len(processed_indices)} entries already processed")
     
-    # Apply author limit if requested
     if limit_authors:
         df = df[df.index < author_num]
         print(f"Processing limited set of {author_num} authors")
@@ -395,5 +402,13 @@ if __name__ == "__main__":
     input_parquet = 'wikisource_urls.parquet'  # Path for the input parquet file
     output_parquet = 'wikisource_complete_async.parquet'  # Path for the output parquet file
     progress_csv = 'processing_progress_async.csv'  # Path for incremental progress
+    
     # Set timeout to 5 minutes (300 seconds)
-    asyncio.run(process_urls_async(input_parquet, output_parquet, progress_csv, limit_authors=True, author_num=900, timeout=300))
+    asyncio.run(process_urls_async(
+        input_parquet, 
+        output_parquet, 
+        progress_csv, 
+        limit_authors=True, 
+        author_num=900, 
+        timeout=300
+    ))

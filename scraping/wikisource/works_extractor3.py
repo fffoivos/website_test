@@ -1,10 +1,4 @@
-#works_extractor_async.py
-
 import requests
-import aiohttp
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
-from functools import partial
 from bs4 import BeautifulSoup, Comment
 from typing import Dict, Optional
 from urllib.parse import urljoin, unquote
@@ -195,20 +189,7 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
                     
                 # If it's not followed by punctuation, add space after
                 return text + ' '
-            
-            if element.name == 'dl':
-                    parts = []
-                    for child in element.children:
-                        if child.name == 'dd':  # Only process dd elements
-                            text = process_element(child)
-                            if text.strip():  # Only add non-empty lines
-                                parts.append(text)
-                    return '\n'.join(parts) + '\n'  # Join with newlines and add final newline
-
-            if element.name == 'dd':
-                text = ''.join(process_element(child) for child in element.children)
-                return text.strip()  # Return stripped text, letting dl handle the newlines
-            
+        
             # Handle links
             if element.name == 'a':
                 if look_for_a_tags:
@@ -283,72 +264,24 @@ def extract_work_content(url: str, look_for_a_tags: bool = True, is_entry_page: 
 
 def is_text_content(url: str) -> bool:
     """Check if the URL points to text content rather than media files."""
+    # List of common media file extensions to skip
     media_extensions = {
         '.jpg', '.jpeg', '.png', '.gif', '.svg', '.pdf', 
         '.mp3', '.wav', '.ogg', '.mp4', '.webm', '.djvu'
     }
+    
+    # Check if URL ends with any media extension
     return not any(url.lower().endswith(ext) for ext in media_extensions)
 
-async def process_url_async(session, semaphore, row, idx, timeout):
-    """Process a single URL asynchronously while preserving all original logic."""
-    start_time = time.time()
-    
-    async with semaphore:
-        try:
-            # Use ThreadPoolExecutor for CPU-bound operations
-            loop = asyncio.get_running_loop()
-            with ThreadPoolExecutor() as pool:
-                content = await loop.run_in_executor(
-                    pool,
-                    partial(extract_work_content, 
-                           row['url'], 
-                           look_for_a_tags=True, 
-                           is_entry_page=True, 
-                           timeout=timeout)
-                )
-            
-            processing_time = time.time() - start_time
-            
-            return {
-                'index': idx,
-                'text': content['text'],
-                'translator': content['translator'],
-                'processing_time': processing_time,
-                'error': None,
-                **row.to_dict()
-            }
-            
-        except Exception as e:
-            print(f"Error processing row {idx + 1}: {e}")
-            return {
-                'index': idx,
-                'text': None,
-                'translator': None,
-                'processing_time': None,
-                'error': str(e),
-                **row.to_dict()
-            }
-
-async def process_chunk_async(chunk_df, start_idx, semaphore, timeout):
-    """Process a chunk of URLs concurrently while managing resources."""
-    async with aiohttp.ClientSession() as session:
-        tasks = []
-        for idx, row in chunk_df.iterrows():
-            task = process_url_async(session, semaphore, row, start_idx + idx, timeout)
-            tasks.append(task)
-        return await asyncio.gather(*tasks)
-
-async def process_urls_async(input_parquet: str, output_parquet: str, progress_csv: str, 
-                           limit_authors: bool = False, author_num: int = 10, 
-                           timeout: int = 300, chunk_size: int = 50, max_concurrent: int = 10):
-    """Asynchronous version of process_urls_from_parquet with preserved functionality."""
+def process_urls_from_parquet(input_parquet: str, output_parquet: str, progress_csv: str, limit_authors: bool = False, author_num: int = 10, timeout: int = 300):
+    """Process URLs from a parquet file and save results incrementally."""
     # Read input parquet
     df = pd.read_parquet(input_parquet)
     
     if 'url' not in df.columns:
         raise ValueError("Input parquet must contain 'url' column")
     
-    # Handle existing progress
+    # Check for existing progress
     processed_indices = set()
     results = []
     if os.path.exists(progress_csv):
@@ -364,36 +297,67 @@ async def process_urls_async(input_parquet: str, output_parquet: str, progress_c
     else:
         print(f"Processing all {len(df)} authors")
     
-    # Filter out already processed rows
-    df = df[~df.index.isin(processed_indices)]
-    
-    # Initialize semaphore for concurrency control
-    semaphore = asyncio.Semaphore(max_concurrent)
-    
-    # Process in chunks to manage memory
-    for chunk_start in range(0, len(df), chunk_size):
-        chunk_df = df.iloc[chunk_start:chunk_start + chunk_size]
-        print(f"Processing chunk {chunk_start//chunk_size + 1}/{(len(df) + chunk_size - 1)//chunk_size}")
+    # Process each URL
+    for idx, row in df.iterrows():
+        if idx in processed_indices:
+            print(f"Skipping already processed row {idx + 1}")
+            continue
+            
+        print(f"Processing row {idx + 1}/{len(df)}: {row['url']}")
         
-        chunk_results = await process_chunk_async(chunk_df, chunk_start, semaphore, timeout)
-        results.extend(chunk_results)
+        start_time = time.time()
+        try:
+            content = extract_work_content(row['url'], look_for_a_tags=True, is_entry_page=True, timeout=timeout)
+            processing_time = round(time.time() - start_time, 2)
+            
+            row_dict = row.to_dict()
+            row_dict.update({
+                'index': idx,
+                'text': content['text'],
+                'translator': content['translator'],
+                'processing_time': processing_time,
+                'error': None
+            })
+            
+        except (RecursionError, MemoryError) as e:
+            print(f"Critical error processing row {idx + 1}: {e}")
+            row_dict = row.to_dict()
+            row_dict.update({
+                'index': idx,
+                'text': None,
+                'translator': None,
+                'processing_time': None,
+                'error': str(e)
+            })
+        except Exception as e:
+            print(f"Unexpected error processing row {idx + 1}: {e}")
+            row_dict = row.to_dict()
+            row_dict.update({
+                'index': idx,
+                'text': None,
+                'translator': None,
+                'processing_time': None,
+                'error': str(e)
+            })
         
-        # Save progress after each chunk
+        # Save progress after each processed URL
+        results.append(row_dict)
         progress_df = pd.DataFrame(results)
         progress_df.to_csv(progress_csv, index=False)
         
-        # Periodic parquet save
+        # Optional: periodically save to parquet as well
         if len(results) % 100 == 0:
             output_df = pd.DataFrame(results)
             output_df.to_parquet(output_parquet)
     
-    # Final save
+    # Final save to parquet
     output_df = pd.DataFrame(results)
+    print(f"Saving final results to {output_parquet}")
     output_df.to_parquet(output_parquet)
 
-if __name__ == "__main__":
-    input_parquet = 'wikisource_urls.parquet'  # Path for the input parquet file
-    output_parquet = 'wikisource_complete_async.parquet'  # Path for the output parquet file
-    progress_csv = 'processing_progress_async.csv'  # Path for incremental progress
+if __name__ == '__main__':
+    input_parquet = 'wikisource_urls.parquet'  # Path to your input parquet file
+    output_parquet = 'wikisource_complete2.parquet'  # Path for the output parquet file
+    progress_csv = 'processing_progress2.csv'  # Path for incremental progress
     # Set timeout to 5 minutes (300 seconds)
-    asyncio.run(process_urls_async(input_parquet, output_parquet, progress_csv, limit_authors=True, author_num=900, timeout=300))
+    process_urls_from_parquet(input_parquet, output_parquet, progress_csv, limit_authors=True, author_num=1000, timeout=300)

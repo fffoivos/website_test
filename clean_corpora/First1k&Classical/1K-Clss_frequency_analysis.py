@@ -130,8 +130,8 @@ def save_frequency_tables(file_results: Dict[str, Tuple[Counter, Counter, Counte
 
 def main():
     # Set your input and output paths
-    input_folder = "."  # Current directory
-    output_prefix = "frequency_analysis"
+    input_folder = "/home/fivos/Desktop/canonical-greekLit/Classics_extracted_text_v3"
+    output_prefix = "frequency_analysis_v3"
     
     print("Starting frequency analysis...")
     file_results = analyze_greek_texts(input_folder)
